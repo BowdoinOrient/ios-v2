@@ -10,4 +10,11 @@
 
 @implementation OrientViewController
 
+- (void) viewDidLoad {
+
+}
+
+- (IBAction)homeButtonPressed:(UIButton *)sender {
+
+}
 @end

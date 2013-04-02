@@ -54,6 +54,7 @@
 		9AB4D43516DD1431009D073A /* iPhoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AB4D43416DD1431009D073A /* iPhoneStoryboard.storyboard */; };
 		9AB4D43716DD1459009D073A /* iPadStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AB4D43616DD1459009D073A /* iPadStoryboard.storyboard */; };
 		9AB4D43C16DD164D009D073A /* OrientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB4D43B16DD164D009D073A /* OrientViewController.m */; };
+		9AC2E748170B75BC00DE53F1 /* OrientWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2E747170B75BC00DE53F1 /* OrientWebView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +110,8 @@
 		9AB4D43616DD1459009D073A /* iPadStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPadStoryboard.storyboard; sourceTree = "<group>"; };
 		9AB4D43A16DD164D009D073A /* OrientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientViewController.h; sourceTree = "<group>"; };
 		9AB4D43B16DD164D009D073A /* OrientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientViewController.m; sourceTree = "<group>"; };
+		9AC2E746170B75BC00DE53F1 /* OrientWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientWebView.h; sourceTree = "<group>"; };
+		9AC2E747170B75BC00DE53F1 /* OrientWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientWebView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +246,8 @@
 				9AB4D40116DD0C76009D073A /* Supporting Files */,
 				9AB4D43416DD1431009D073A /* iPhoneStoryboard.storyboard */,
 				9AB4D43616DD1459009D073A /* iPadStoryboard.storyboard */,
+				9AC2E746170B75BC00DE53F1 /* OrientWebView.h */,
+				9AC2E747170B75BC00DE53F1 /* OrientWebView.m */,
 				9AB4D43A16DD164D009D073A /* OrientViewController.h */,
 				9AB4D43B16DD164D009D073A /* OrientViewController.m */,
 			);
@@ -369,6 +374,7 @@
 				9AB4D40716DD0C76009D073A /* main.m in Sources */,
 				9AB4D40B16DD0C76009D073A /* OrientAppDelegate.m in Sources */,
 				9AB4D43C16DD164D009D073A /* OrientViewController.m in Sources */,
+				9AC2E748170B75BC00DE53F1 /* OrientWebView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
