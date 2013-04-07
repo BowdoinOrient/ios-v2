@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "OrientWebView.h"
+#import <UIKit/UIKit.h>
 
 @interface OrientViewController : UIViewController
 
-- (IBAction)homeButtonPressed:(UIButton *)sender;
 
 @property (strong, nonatomic) IBOutlet OrientWebView *webview;
 
