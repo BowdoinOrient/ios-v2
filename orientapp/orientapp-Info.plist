@@ -42,7 +42,7 @@
 	<key>UIMainStoryboardFile</key>
 	<string>iPhoneStoryboard</string>
 	<key>UIMainStoryboardFile~ipad</key>
-	<string>iPhoneStoryboard</string>
+	<string>iPadStoryboard</string>
 	<key>UIPrerenderedIcon</key>
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>
