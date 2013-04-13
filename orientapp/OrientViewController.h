@@ -13,7 +13,7 @@
 @interface OrientViewController : UIViewController
 
 
-@property (strong, nonatomic) IBOutlet OrientWebView *webview;
+@property (strong, nonatomic) IBOutlet OrientWebView *webView;
 
 
 @end

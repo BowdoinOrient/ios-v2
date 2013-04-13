@@ -10,8 +10,16 @@
 
 @implementation OrientViewController
 
-- (void) viewDidLoad {
+@synthesize webView = _webView;
 
+
+// Loads the Orient homepage 
+- (void) viewDidLoad {
+    [super viewDidLoad];
+    NSString *fullURL = @"http://www.bowdoinorient.com";
+    NSURL *url = [NSURL URLWithString:fullURL];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    [self.webView loadRequest:requestObj];
 }
 
 - (IBAction)homeButtonPressed:(UIButton *)sender {
