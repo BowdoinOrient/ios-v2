@@ -11,6 +11,7 @@
 @implementation OrientViewController
 
 @synthesize webView = _webView;
+@synthesize sectionLabel = _sectionLabel;
 
 
 // Loads the Orient homepage 
@@ -20,6 +21,9 @@
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:requestObj];
+    
+    [self.sectionLabel setFont:[UIFont fontWithName:@"Minion Pro Med" size:8]];
+
 }
 
 - (IBAction)homeButtonPressed:(UIButton *)sender {

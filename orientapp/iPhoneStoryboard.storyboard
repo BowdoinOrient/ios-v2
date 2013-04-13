@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9Oe-bC-DqM">
-                                        <rect key="frame" x="58" y="10" width="205" height="51"/>
+                                        <rect key="frame" x="20" y="9" width="205" height="51"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" none="YES" button="YES" image="YES"/>
@@ -38,6 +38,20 @@
                                             <action selector="homeButtonPressed:" destination="ath-wx-9tZ" eventType="touchUpInside" id="rIu-TC-52N"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eoK-Tl-SlE">
+                                        <rect key="frame" x="251" y="24" width="57" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Section">
+                                                <attributes>
+                                                    <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <font key="NSFont" size="17" name="Helvetica"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -45,6 +59,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="sectionLabel" destination="eoK-Tl-SlE" id="9ye-xj-RoX"/>
                         <outlet property="webView" destination="LXj-8H-mhd" id="0Ef-Dk-Gec"/>
                     </connections>
                 </viewController>
@@ -56,18 +71,6 @@
     <resources>
         <image name="Logo.png" width="2550" height="679"/>
     </resources>
-    <classes>
-        <class className="OrientViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OrientViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="homeButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="webView" candidateClass="OrientWebView"/>
-            </relationships>
-        </class>
-        <class className="OrientWebView" superclassName="UIWebView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OrientWebView.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

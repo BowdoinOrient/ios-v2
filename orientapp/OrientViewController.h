@@ -16,5 +16,6 @@
 @property (strong, nonatomic) IBOutlet OrientWebView *webView;
 
 - (IBAction)homeButtonPressed:(UIButton *)sender;
+@property (strong, nonatomic) IBOutlet UILabel *sectionLabel;
 
 @end
