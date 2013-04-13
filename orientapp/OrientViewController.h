@@ -15,5 +15,6 @@
 
 @property (strong, nonatomic) IBOutlet OrientWebView *webView;
 
+- (IBAction)homeButtonPressed:(UIButton *)sender;
 
 @end

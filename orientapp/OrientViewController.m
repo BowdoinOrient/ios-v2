@@ -23,6 +23,10 @@
 }
 
 - (IBAction)homeButtonPressed:(UIButton *)sender {
-
+    NSString *fullURL = @"http://www.bowdoinorient.com";
+    NSURL *url = [NSURL URLWithString:fullURL];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    [self.webView loadRequest:requestObj];
 }
+
 @end
