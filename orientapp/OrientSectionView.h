@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class OrientSectionView;
+
 @interface OrientSectionView : UIView
 
 @end

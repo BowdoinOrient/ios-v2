@@ -19,13 +19,14 @@
     return self;
 }
 
-- (void)swipe:(UIPanGestureRecognizer *)gesture
+- (void)swipe:(UISwipeGestureRecognizer *)gesture
 {
     if ((gesture.state == UIGestureRecognizerStateChanged) ||
         (gesture.state == UIGestureRecognizerStateEnded)) {
-        NSLog(@"swipe city bitch");
+        
         [self setNeedsDisplay];
     }
+    NSLog(@"swipe city bitch");
     
 }
 
