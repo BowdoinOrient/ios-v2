@@ -17,5 +17,6 @@
 
 - (IBAction)homeButtonPressed:(UIButton *)sender;
 @property (strong, nonatomic) IBOutlet UILabel *sectionLabel;
+@property (strong, nonatomic) IBOutlet UIButton *sectionButton;
 
 @end

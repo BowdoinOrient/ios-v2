@@ -1,14 +1,14 @@
 //
-//  OrientCarouselView.m
+//  OrientSection.m
 //  orientapp
 //
-//  Created by Brian Jacobel on 4/13/13.
+//  Created by Quinn Cohane on 4/24/13.
 //  Copyright (c) 2013 com.bowdoinorient. All rights reserved.
 //
 
-#import "OrientCarouselView.h"
+#import "OrientSection.h"
 
-@implementation OrientCarouselView
+@implementation OrientSection
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -17,17 +17,6 @@
         // Initialization code
     }
     return self;
-}
-
-- (void)swipe:(UISwipeGestureRecognizer *)gesture
-{
-    if ((gesture.state == UIGestureRecognizerStateChanged) ||
-        (gesture.state == UIGestureRecognizerStateEnded)) {
-        
-        [self setNeedsDisplay];
-    }
-    NSLog(@"swipe city bitch");
-    
 }
 
 /*
