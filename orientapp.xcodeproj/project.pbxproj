@@ -58,6 +58,7 @@
 		9A4A75E417287339007172DF /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A4A75E317287339007172DF /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		9A4A75E717287676007172DF /* OrientMenubarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A75E617287676007172DF /* OrientMenubarViewController.m */; };
 		9A4A75EB172876BF007172DF /* OrientMenubarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A75EA172876BF007172DF /* OrientMenubarView.m */; };
+		9A4A75ED17287739007172DF /* OrientMenubarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75EC17287739007172DF /* OrientMenubarView.xib */; };
 		9A9C67D31719F385009F26DB /* OrientCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C67D21719F385009F26DB /* OrientCarouselView.m */; };
 		9A9C67D61719F907009F26DB /* OrientCarouselViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C67D51719F907009F26DB /* OrientCarouselViewController.m */; };
 		9AB4D3FB16DD0C76009D073A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AB4D3FA16DD0C76009D073A /* UIKit.framework */; };
@@ -128,6 +129,7 @@
 		9A4A75E617287676007172DF /* OrientMenubarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientMenubarViewController.m; sourceTree = "<group>"; };
 		9A4A75E9172876BF007172DF /* OrientMenubarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientMenubarView.h; sourceTree = "<group>"; };
 		9A4A75EA172876BF007172DF /* OrientMenubarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientMenubarView.m; sourceTree = "<group>"; };
+		9A4A75EC17287739007172DF /* OrientMenubarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrientMenubarView.xib; sourceTree = "<group>"; };
 		9A9C67D11719F385009F26DB /* OrientCarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientCarouselView.h; sourceTree = "<group>"; };
 		9A9C67D21719F385009F26DB /* OrientCarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientCarouselView.m; sourceTree = "<group>"; };
 		9A9C67D41719F907009F26DB /* OrientCarouselViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientCarouselViewController.h; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 		9A4A75E81728767F007172DF /* MenuBar */ = {
 			isa = PBXGroup;
 			children = (
+				9A4A75EC17287739007172DF /* OrientMenubarView.xib */,
 				9A4A75E9172876BF007172DF /* OrientMenubarView.h */,
 				9A4A75EA172876BF007172DF /* OrientMenubarView.m */,
 				9A4A75E517287676007172DF /* OrientMenubarViewController.h */,
@@ -497,6 +500,7 @@
 				9A4A75E0172870D5007172DF /* news.png in Resources */,
 				9A4A75E1172870D5007172DF /* opinion.png in Resources */,
 				9A4A75E2172870D5007172DF /* sports.png in Resources */,
+				9A4A75ED17287739007172DF /* OrientMenubarView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

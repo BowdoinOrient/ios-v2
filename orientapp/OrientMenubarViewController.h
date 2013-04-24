@@ -10,4 +10,6 @@
 
 @interface OrientMenubarViewController : UIViewController
 
+- (IBAction)tweetButton:(id)sender;
+
 @end
