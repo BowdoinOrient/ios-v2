@@ -1,18 +1,18 @@
 //
-//  OrientSectionViewController.m
+//  OrientCarouselViewController.m
 //  orientapp
 //
 //  Created by Brian Jacobel on 4/13/13.
 //  Copyright (c) 2013 com.bowdoinorient. All rights reserved.
 //
 
-#import "OrientSectionViewController.h"
+#import "OrientCarouselViewController.h"
 
-@interface OrientSectionViewController ()
+@interface OrientCarouselViewController ()
 
 @end
 
-@implementation OrientSectionViewController
+@implementation OrientCarouselViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

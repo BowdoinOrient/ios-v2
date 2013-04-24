@@ -1,5 +1,5 @@
 //
-//  OrientSectionView.h
+//  OrientCarouselView.h
 //  orientapp
 //
 //  Created by Brian Jacobel on 4/13/13.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@class OrientSectionView;
+@class OrientCarouselView;
 
-@interface OrientSectionView : UIView
+@interface OrientCarouselView : UIView
 
 @end
