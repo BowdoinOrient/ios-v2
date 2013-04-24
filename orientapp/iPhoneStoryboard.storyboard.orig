@@ -90,6 +90,11 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+<<<<<<< HEAD
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" link="YES"/>
+                                </accessibility>
+=======
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Features" id="Epq-5A-5W7">
                                 <rect key="frame" x="0.0" y="66" width="320" height="44"/>
@@ -99,6 +104,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+>>>>>>> ebe9ed27b1eab3ab8a4b6966a54e4b774dec9edc
                             </tableViewCell>
                         </prototypes>
                         <connections>
