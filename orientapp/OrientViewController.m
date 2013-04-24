@@ -7,11 +7,14 @@
 //
 
 #import "OrientViewController.h"
+#import "OrientSectionViewController.h"
+
 
 @implementation OrientViewController
 
 @synthesize webView = _webView;
 @synthesize sectionLabel = _sectionLabel;
+@synthesize sectionButton = _sectionButton;
 
 
 // Loads the Orient homepage 
@@ -31,6 +34,11 @@
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:requestObj];
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    OrientSectionViewController* orientSectionViewController = (OrientSectionViewController*)[segue destinationViewController];
 }
 
 @end
