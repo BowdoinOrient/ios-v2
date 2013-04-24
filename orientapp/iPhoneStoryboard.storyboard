@@ -20,24 +20,6 @@
                             <view contentMode="scaleToFill" id="rfc-VF-ndh">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="51"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9Oe-bC-DqM">
-                                        <rect key="frame" x="5" y="5" width="205" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" none="YES" button="YES" image="YES"/>
-                                        </accessibility>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Button" image="Logo.png">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="homeButtonPressed:" destination="ath-wx-9tZ" eventType="touchUpInside" id="rIu-TC-52N"/>
-                                        </connections>
-                                    </button>
                                     <view contentMode="scaleToFill" id="y3I-Xs-ZeM" customClass="OrientCarouselView">
                                         <rect key="frame" x="212" y="5" width="100" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -59,6 +41,10 @@
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.21510980939999999" blue="0.19622667590000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Logo.png" id="MGj-1i-m28">
+                                        <rect key="frame" x="-6" y="10" width="215" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -75,7 +61,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo.png" width="2550" height="679"/>
+        <image name="Logo.png" width="978" height="191"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

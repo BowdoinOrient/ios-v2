@@ -8,27 +8,53 @@
 
 /* Begin PBXBuildFile section */
 		9A344188171DA0BE0057B815 /* iPadStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A344187171DA0BE0057B815 /* iPadStoryboard.storyboard */; };
-		9A7627DF1703419600C25348 /* MyriadPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A7627BE1703419600C25348 /* MyriadPro-Bold.otf */; };
-		9A7627E01703419600C25348 /* MyriadPro-BoldCond.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A7627BF1703419600C25348 /* MyriadPro-BoldCond.otf */; };
-		9A7627E11703419600C25348 /* MyriadPro-BoldCondIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A7627C01703419600C25348 /* MyriadPro-BoldCondIt.otf */; };
-		9A7627E21703419600C25348 /* MyriadPro-BoldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A7627C11703419600C25348 /* MyriadPro-BoldIt.otf */; };
-		9A7627E31703419600C25348 /* MyriadPro-Cond.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A7627C21703419600C25348 /* MyriadPro-Cond.otf */; };
-		9A7627E41703419600C25348 /* MyriadPro-CondIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A7627C31703419600C25348 /* MyriadPro-CondIt.otf */; };
-		9A7627E51703419600C25348 /* MyriadPro-It.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A7627C41703419600C25348 /* MyriadPro-It.otf */; };
-		9A7627E61703419600C25348 /* MyriadPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A7627C51703419600C25348 /* MyriadPro-Regular.otf */; };
-		9A7627E71703419600C25348 /* MyriadPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A7627C61703419600C25348 /* MyriadPro-Semibold.otf */; };
-		9A7627E81703419600C25348 /* MyriadPro-SemiboldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A7627C71703419600C25348 /* MyriadPro-SemiboldIt.otf */; };
-		9A7627E91703419600C25348 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A7627C91703419600C25348 /* Icon-72.png */; };
-		9A7627EA1703419600C25348 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A7627CA1703419600C25348 /* Icon-72@2x.png */; };
-		9A7627EB1703419600C25348 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A7627CB1703419600C25348 /* Icon-Small-50.png */; };
-		9A7627EC1703419600C25348 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A7627CC1703419600C25348 /* Icon-Small-50@2x.png */; };
-		9A7627ED1703419600C25348 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A7627CD1703419600C25348 /* Icon-Small.png */; };
-		9A7627EE1703419600C25348 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A7627CE1703419600C25348 /* Icon-Small@2x.png */; };
-		9A7627EF1703419600C25348 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A7627CF1703419600C25348 /* Icon.png */; };
-		9A7627F01703419600C25348 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A7627D01703419600C25348 /* Icon@2x.png */; };
-		9A7627F11703419600C25348 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A7627D11703419600C25348 /* iTunesArtwork.png */; };
-		9A7627F21703419600C25348 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A7627D21703419600C25348 /* iTunesArtwork@2x.png */; };
-		9A7627F31703419600C25348 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A7627D41703419600C25348 /* Logo.png */; };
+		9A4A75B4172870D5007172DF /* minionproboldit.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A757E172870D5007172DF /* minionproboldit.ttf */; };
+		9A4A75B5172870D5007172DF /* minionproit.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A757F172870D5007172DF /* minionproit.ttf */; };
+		9A4A75B6172870D5007172DF /* minionpromedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A7580172870D5007172DF /* minionpromedium.ttf */; };
+		9A4A75B7172870D5007172DF /* minionpromediumit.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A7581172870D5007172DF /* minionpromediumit.ttf */; };
+		9A4A75B8172870D5007172DF /* minionproregular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A7582172870D5007172DF /* minionproregular.ttf */; };
+		9A4A75B9172870D5007172DF /* minionprosemibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A7583172870D5007172DF /* minionprosemibold.ttf */; };
+		9A4A75BA172870D5007172DF /* minionprosemiboldit.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A7584172870D5007172DF /* minionprosemiboldit.ttf */; };
+		9A4A75BB172870D5007172DF /* MyriadPro-CondIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A7586172870D5007172DF /* MyriadPro-CondIt.otf */; };
+		9A4A75BC172870D5007172DF /* MyriadPro-It.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A7587172870D5007172DF /* MyriadPro-It.otf */; };
+		9A4A75BD172870D5007172DF /* MyriadPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A7588172870D5007172DF /* MyriadPro-Regular.otf */; };
+		9A4A75BE172870D5007172DF /* MyriadPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A7589172870D5007172DF /* MyriadPro-Semibold.otf */; };
+		9A4A75BF172870D5007172DF /* MyriadPro-SemiboldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A758A172870D5007172DF /* MyriadPro-SemiboldIt.otf */; };
+		9A4A75C0172870D5007172DF /* minionproboldit.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A758D172870D5007172DF /* minionproboldit.ttf */; };
+		9A4A75C1172870D5007172DF /* minionproit.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A758E172870D5007172DF /* minionproit.ttf */; };
+		9A4A75C2172870D5007172DF /* minionpromedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A758F172870D5007172DF /* minionpromedium.ttf */; };
+		9A4A75C3172870D5007172DF /* minionpromediumit.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A7590172870D5007172DF /* minionpromediumit.ttf */; };
+		9A4A75C4172870D5007172DF /* minionproregular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A7591172870D5007172DF /* minionproregular.ttf */; };
+		9A4A75C5172870D5007172DF /* minionprosemibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A7592172870D5007172DF /* minionprosemibold.ttf */; };
+		9A4A75C6172870D5007172DF /* minionprosemiboldit.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A7593172870D5007172DF /* minionprosemiboldit.ttf */; };
+		9A4A75C7172870D5007172DF /* MyriadPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A7595172870D5007172DF /* MyriadPro-Bold.otf */; };
+		9A4A75C8172870D5007172DF /* MyriadPro-BoldCond.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A7596172870D5007172DF /* MyriadPro-BoldCond.otf */; };
+		9A4A75C9172870D5007172DF /* MyriadPro-BoldCondIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A7597172870D5007172DF /* MyriadPro-BoldCondIt.otf */; };
+		9A4A75CA172870D5007172DF /* MyriadPro-BoldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A7598172870D5007172DF /* MyriadPro-BoldIt.otf */; };
+		9A4A75CB172870D5007172DF /* MyriadPro-Cond.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A7599172870D5007172DF /* MyriadPro-Cond.otf */; };
+		9A4A75CC172870D5007172DF /* MyriadPro-CondIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A759A172870D5007172DF /* MyriadPro-CondIt.otf */; };
+		9A4A75CD172870D5007172DF /* MyriadPro-It.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A759B172870D5007172DF /* MyriadPro-It.otf */; };
+		9A4A75CE172870D5007172DF /* MyriadPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A759C172870D5007172DF /* MyriadPro-Regular.otf */; };
+		9A4A75CF172870D5007172DF /* MyriadPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A759D172870D5007172DF /* MyriadPro-Semibold.otf */; };
+		9A4A75D0172870D5007172DF /* MyriadPro-SemiboldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A759E172870D5007172DF /* MyriadPro-SemiboldIt.otf */; };
+		9A4A75D1172870D5007172DF /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75A0172870D5007172DF /* Icon-72.png */; };
+		9A4A75D2172870D5007172DF /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75A1172870D5007172DF /* Icon-72@2x.png */; };
+		9A4A75D3172870D5007172DF /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75A2172870D5007172DF /* Icon-Small-50.png */; };
+		9A4A75D4172870D5007172DF /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75A3172870D5007172DF /* Icon-Small-50@2x.png */; };
+		9A4A75D5172870D5007172DF /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75A4172870D5007172DF /* Icon-Small.png */; };
+		9A4A75D6172870D5007172DF /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75A5172870D5007172DF /* Icon-Small@2x.png */; };
+		9A4A75D7172870D5007172DF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75A6172870D5007172DF /* Icon.png */; };
+		9A4A75D8172870D5007172DF /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75A7172870D5007172DF /* Icon@2x.png */; };
+		9A4A75D9172870D5007172DF /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75A8172870D5007172DF /* iTunesArtwork.png */; };
+		9A4A75DA172870D5007172DF /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75A9172870D5007172DF /* iTunesArtwork@2x.png */; };
+		9A4A75DB172870D5007172DF /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75AB172870D5007172DF /* Logo.png */; };
+		9A4A75DC172870D5007172DF /* Logo_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75AC172870D5007172DF /* Logo_big.png */; };
+		9A4A75DD172870D5007172DF /* ane.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75AE172870D5007172DF /* ane.png */; };
+		9A4A75DE172870D5007172DF /* features.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75AF172870D5007172DF /* features.png */; };
+		9A4A75DF172870D5007172DF /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75B0172870D5007172DF /* home.png */; };
+		9A4A75E0172870D5007172DF /* news.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75B1172870D5007172DF /* news.png */; };
+		9A4A75E1172870D5007172DF /* opinion.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75B2172870D5007172DF /* opinion.png */; };
+		9A4A75E2172870D5007172DF /* sports.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75B3172870D5007172DF /* sports.png */; };
 		9A9C67D31719F385009F26DB /* OrientCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C67D21719F385009F26DB /* OrientCarouselView.m */; };
 		9A9C67D61719F907009F26DB /* OrientCarouselViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C67D51719F907009F26DB /* OrientCarouselViewController.m */; };
 		9AB4D3FB16DD0C76009D073A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AB4D3FA16DD0C76009D073A /* UIKit.framework */; };
@@ -43,38 +69,57 @@
 		9AB4D43516DD1431009D073A /* iPhoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AB4D43416DD1431009D073A /* iPhoneStoryboard.storyboard */; };
 		9AB4D43C16DD164D009D073A /* OrientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB4D43B16DD164D009D073A /* OrientViewController.m */; };
 		9AC2E748170B75BC00DE53F1 /* OrientWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2E747170B75BC00DE53F1 /* OrientWebView.m */; };
-		E46EF3A8171A01B600342DE9 /* minionproboldit.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E46EF3A1171A01B600342DE9 /* minionproboldit.ttf */; };
-		E46EF3A9171A01B600342DE9 /* minionproit.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E46EF3A2171A01B600342DE9 /* minionproit.ttf */; };
-		E46EF3AA171A01B600342DE9 /* minionpromedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E46EF3A3171A01B600342DE9 /* minionpromedium.ttf */; };
-		E46EF3AB171A01B600342DE9 /* minionpromediumit.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E46EF3A4171A01B600342DE9 /* minionpromediumit.ttf */; };
-		E46EF3AC171A01B600342DE9 /* minionproregular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E46EF3A5171A01B600342DE9 /* minionproregular.ttf */; };
-		E46EF3AD171A01B600342DE9 /* minionprosemibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E46EF3A6171A01B600342DE9 /* minionprosemibold.ttf */; };
-		E46EF3AE171A01B600342DE9 /* minionprosemiboldit.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E46EF3A7171A01B600342DE9 /* minionprosemiboldit.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9A344187171DA0BE0057B815 /* iPadStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPadStoryboard.storyboard; sourceTree = "<group>"; };
-		9A7627BE1703419600C25348 /* MyriadPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Bold.otf"; sourceTree = "<group>"; };
-		9A7627BF1703419600C25348 /* MyriadPro-BoldCond.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-BoldCond.otf"; sourceTree = "<group>"; };
-		9A7627C01703419600C25348 /* MyriadPro-BoldCondIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-BoldCondIt.otf"; sourceTree = "<group>"; };
-		9A7627C11703419600C25348 /* MyriadPro-BoldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-BoldIt.otf"; sourceTree = "<group>"; };
-		9A7627C21703419600C25348 /* MyriadPro-Cond.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Cond.otf"; sourceTree = "<group>"; };
-		9A7627C31703419600C25348 /* MyriadPro-CondIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-CondIt.otf"; sourceTree = "<group>"; };
-		9A7627C41703419600C25348 /* MyriadPro-It.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-It.otf"; sourceTree = "<group>"; };
-		9A7627C51703419600C25348 /* MyriadPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Regular.otf"; sourceTree = "<group>"; };
-		9A7627C61703419600C25348 /* MyriadPro-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Semibold.otf"; sourceTree = "<group>"; };
-		9A7627C71703419600C25348 /* MyriadPro-SemiboldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-SemiboldIt.otf"; sourceTree = "<group>"; };
-		9A7627C91703419600C25348 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
-		9A7627CA1703419600C25348 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
-		9A7627CB1703419600C25348 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
-		9A7627CC1703419600C25348 /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
-		9A7627CD1703419600C25348 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
-		9A7627CE1703419600C25348 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
-		9A7627CF1703419600C25348 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		9A7627D01703419600C25348 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		9A7627D11703419600C25348 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
-		9A7627D21703419600C25348 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
-		9A7627D41703419600C25348 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		9A4A757E172870D5007172DF /* minionproboldit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minionproboldit.ttf; sourceTree = "<group>"; };
+		9A4A757F172870D5007172DF /* minionproit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minionproit.ttf; sourceTree = "<group>"; };
+		9A4A7580172870D5007172DF /* minionpromedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minionpromedium.ttf; sourceTree = "<group>"; };
+		9A4A7581172870D5007172DF /* minionpromediumit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minionpromediumit.ttf; sourceTree = "<group>"; };
+		9A4A7582172870D5007172DF /* minionproregular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minionproregular.ttf; sourceTree = "<group>"; };
+		9A4A7583172870D5007172DF /* minionprosemibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minionprosemibold.ttf; sourceTree = "<group>"; };
+		9A4A7584172870D5007172DF /* minionprosemiboldit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minionprosemiboldit.ttf; sourceTree = "<group>"; };
+		9A4A7586172870D5007172DF /* MyriadPro-CondIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-CondIt.otf"; sourceTree = "<group>"; };
+		9A4A7587172870D5007172DF /* MyriadPro-It.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-It.otf"; sourceTree = "<group>"; };
+		9A4A7588172870D5007172DF /* MyriadPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Regular.otf"; sourceTree = "<group>"; };
+		9A4A7589172870D5007172DF /* MyriadPro-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Semibold.otf"; sourceTree = "<group>"; };
+		9A4A758A172870D5007172DF /* MyriadPro-SemiboldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-SemiboldIt.otf"; sourceTree = "<group>"; };
+		9A4A758D172870D5007172DF /* minionproboldit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minionproboldit.ttf; sourceTree = "<group>"; };
+		9A4A758E172870D5007172DF /* minionproit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minionproit.ttf; sourceTree = "<group>"; };
+		9A4A758F172870D5007172DF /* minionpromedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minionpromedium.ttf; sourceTree = "<group>"; };
+		9A4A7590172870D5007172DF /* minionpromediumit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minionpromediumit.ttf; sourceTree = "<group>"; };
+		9A4A7591172870D5007172DF /* minionproregular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minionproregular.ttf; sourceTree = "<group>"; };
+		9A4A7592172870D5007172DF /* minionprosemibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minionprosemibold.ttf; sourceTree = "<group>"; };
+		9A4A7593172870D5007172DF /* minionprosemiboldit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minionprosemiboldit.ttf; sourceTree = "<group>"; };
+		9A4A7595172870D5007172DF /* MyriadPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Bold.otf"; sourceTree = "<group>"; };
+		9A4A7596172870D5007172DF /* MyriadPro-BoldCond.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-BoldCond.otf"; sourceTree = "<group>"; };
+		9A4A7597172870D5007172DF /* MyriadPro-BoldCondIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-BoldCondIt.otf"; sourceTree = "<group>"; };
+		9A4A7598172870D5007172DF /* MyriadPro-BoldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-BoldIt.otf"; sourceTree = "<group>"; };
+		9A4A7599172870D5007172DF /* MyriadPro-Cond.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Cond.otf"; sourceTree = "<group>"; };
+		9A4A759A172870D5007172DF /* MyriadPro-CondIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-CondIt.otf"; sourceTree = "<group>"; };
+		9A4A759B172870D5007172DF /* MyriadPro-It.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-It.otf"; sourceTree = "<group>"; };
+		9A4A759C172870D5007172DF /* MyriadPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Regular.otf"; sourceTree = "<group>"; };
+		9A4A759D172870D5007172DF /* MyriadPro-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Semibold.otf"; sourceTree = "<group>"; };
+		9A4A759E172870D5007172DF /* MyriadPro-SemiboldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-SemiboldIt.otf"; sourceTree = "<group>"; };
+		9A4A75A0172870D5007172DF /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		9A4A75A1172870D5007172DF /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		9A4A75A2172870D5007172DF /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		9A4A75A3172870D5007172DF /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		9A4A75A4172870D5007172DF /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		9A4A75A5172870D5007172DF /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		9A4A75A6172870D5007172DF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		9A4A75A7172870D5007172DF /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		9A4A75A8172870D5007172DF /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		9A4A75A9172870D5007172DF /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		9A4A75AB172870D5007172DF /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		9A4A75AC172870D5007172DF /* Logo_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_big.png; sourceTree = "<group>"; };
+		9A4A75AE172870D5007172DF /* ane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ane.png; sourceTree = "<group>"; };
+		9A4A75AF172870D5007172DF /* features.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = features.png; sourceTree = "<group>"; };
+		9A4A75B0172870D5007172DF /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		9A4A75B1172870D5007172DF /* news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news.png; sourceTree = "<group>"; };
+		9A4A75B2172870D5007172DF /* opinion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = opinion.png; sourceTree = "<group>"; };
+		9A4A75B3172870D5007172DF /* sports.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sports.png; sourceTree = "<group>"; };
 		9A9C67D11719F385009F26DB /* OrientCarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientCarouselView.h; sourceTree = "<group>"; };
 		9A9C67D21719F385009F26DB /* OrientCarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientCarouselView.m; sourceTree = "<group>"; };
 		9A9C67D41719F907009F26DB /* OrientCarouselViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientCarouselViewController.h; sourceTree = "<group>"; };
@@ -97,13 +142,6 @@
 		9AB4D43B16DD164D009D073A /* OrientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientViewController.m; sourceTree = "<group>"; };
 		9AC2E746170B75BC00DE53F1 /* OrientWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientWebView.h; sourceTree = "<group>"; };
 		9AC2E747170B75BC00DE53F1 /* OrientWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientWebView.m; sourceTree = "<group>"; };
-		E46EF3A1171A01B600342DE9 /* minionproboldit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minionproboldit.ttf; sourceTree = "<group>"; };
-		E46EF3A2171A01B600342DE9 /* minionproit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minionproit.ttf; sourceTree = "<group>"; };
-		E46EF3A3171A01B600342DE9 /* minionpromedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minionpromedium.ttf; sourceTree = "<group>"; };
-		E46EF3A4171A01B600342DE9 /* minionpromediumit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minionpromediumit.ttf; sourceTree = "<group>"; };
-		E46EF3A5171A01B600342DE9 /* minionproregular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minionproregular.ttf; sourceTree = "<group>"; };
-		E46EF3A6171A01B600342DE9 /* minionprosemibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minionprosemibold.ttf; sourceTree = "<group>"; };
-		E46EF3A7171A01B600342DE9 /* minionprosemiboldit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minionprosemiboldit.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,65 +158,138 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9A7627B01703419600C25348 /* Resources */ = {
+		9A4A757A172870D5007172DF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9A7627B11703419600C25348 /* Fonts */,
-				9A7627C81703419600C25348 /* Icons */,
-				9A7627D31703419600C25348 /* Images */,
+				9A4A757B172870D5007172DF /* Fonts */,
+				9A4A759F172870D5007172DF /* Icons */,
+				9A4A75AA172870D5007172DF /* Images */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		9A7627B11703419600C25348 /* Fonts */ = {
+		9A4A757B172870D5007172DF /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				E46EF3A0171A01B600342DE9 /* Minion Pro */,
-				9A7627BD1703419600C25348 /* Myriad Pro */,
+				9A4A757C172870D5007172DF /* OTF */,
+				9A4A758B172870D5007172DF /* TTF */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		9A7627BD1703419600C25348 /* Myriad Pro */ = {
+		9A4A757C172870D5007172DF /* OTF */ = {
 			isa = PBXGroup;
 			children = (
-				9A7627BE1703419600C25348 /* MyriadPro-Bold.otf */,
-				9A7627BF1703419600C25348 /* MyriadPro-BoldCond.otf */,
-				9A7627C01703419600C25348 /* MyriadPro-BoldCondIt.otf */,
-				9A7627C11703419600C25348 /* MyriadPro-BoldIt.otf */,
-				9A7627C21703419600C25348 /* MyriadPro-Cond.otf */,
-				9A7627C31703419600C25348 /* MyriadPro-CondIt.otf */,
-				9A7627C41703419600C25348 /* MyriadPro-It.otf */,
-				9A7627C51703419600C25348 /* MyriadPro-Regular.otf */,
-				9A7627C61703419600C25348 /* MyriadPro-Semibold.otf */,
-				9A7627C71703419600C25348 /* MyriadPro-SemiboldIt.otf */,
+				9A4A757D172870D5007172DF /* Minion Pro */,
+				9A4A7585172870D5007172DF /* Myriad Pro */,
+			);
+			path = OTF;
+			sourceTree = "<group>";
+		};
+		9A4A757D172870D5007172DF /* Minion Pro */ = {
+			isa = PBXGroup;
+			children = (
+				9A4A757E172870D5007172DF /* minionproboldit.ttf */,
+				9A4A757F172870D5007172DF /* minionproit.ttf */,
+				9A4A7580172870D5007172DF /* minionpromedium.ttf */,
+				9A4A7581172870D5007172DF /* minionpromediumit.ttf */,
+				9A4A7582172870D5007172DF /* minionproregular.ttf */,
+				9A4A7583172870D5007172DF /* minionprosemibold.ttf */,
+				9A4A7584172870D5007172DF /* minionprosemiboldit.ttf */,
+			);
+			path = "Minion Pro";
+			sourceTree = "<group>";
+		};
+		9A4A7585172870D5007172DF /* Myriad Pro */ = {
+			isa = PBXGroup;
+			children = (
+				9A4A7586172870D5007172DF /* MyriadPro-CondIt.otf */,
+				9A4A7587172870D5007172DF /* MyriadPro-It.otf */,
+				9A4A7588172870D5007172DF /* MyriadPro-Regular.otf */,
+				9A4A7589172870D5007172DF /* MyriadPro-Semibold.otf */,
+				9A4A758A172870D5007172DF /* MyriadPro-SemiboldIt.otf */,
 			);
 			path = "Myriad Pro";
 			sourceTree = "<group>";
 		};
-		9A7627C81703419600C25348 /* Icons */ = {
+		9A4A758B172870D5007172DF /* TTF */ = {
 			isa = PBXGroup;
 			children = (
-				9A7627C91703419600C25348 /* Icon-72.png */,
-				9A7627CA1703419600C25348 /* Icon-72@2x.png */,
-				9A7627CB1703419600C25348 /* Icon-Small-50.png */,
-				9A7627CC1703419600C25348 /* Icon-Small-50@2x.png */,
-				9A7627CD1703419600C25348 /* Icon-Small.png */,
-				9A7627CE1703419600C25348 /* Icon-Small@2x.png */,
-				9A7627CF1703419600C25348 /* Icon.png */,
-				9A7627D01703419600C25348 /* Icon@2x.png */,
-				9A7627D11703419600C25348 /* iTunesArtwork.png */,
-				9A7627D21703419600C25348 /* iTunesArtwork@2x.png */,
+				9A4A758C172870D5007172DF /* Minion Pro */,
+				9A4A7594172870D5007172DF /* Myriad Pro */,
+			);
+			path = TTF;
+			sourceTree = "<group>";
+		};
+		9A4A758C172870D5007172DF /* Minion Pro */ = {
+			isa = PBXGroup;
+			children = (
+				9A4A758D172870D5007172DF /* minionproboldit.ttf */,
+				9A4A758E172870D5007172DF /* minionproit.ttf */,
+				9A4A758F172870D5007172DF /* minionpromedium.ttf */,
+				9A4A7590172870D5007172DF /* minionpromediumit.ttf */,
+				9A4A7591172870D5007172DF /* minionproregular.ttf */,
+				9A4A7592172870D5007172DF /* minionprosemibold.ttf */,
+				9A4A7593172870D5007172DF /* minionprosemiboldit.ttf */,
+			);
+			path = "Minion Pro";
+			sourceTree = "<group>";
+		};
+		9A4A7594172870D5007172DF /* Myriad Pro */ = {
+			isa = PBXGroup;
+			children = (
+				9A4A7595172870D5007172DF /* MyriadPro-Bold.otf */,
+				9A4A7596172870D5007172DF /* MyriadPro-BoldCond.otf */,
+				9A4A7597172870D5007172DF /* MyriadPro-BoldCondIt.otf */,
+				9A4A7598172870D5007172DF /* MyriadPro-BoldIt.otf */,
+				9A4A7599172870D5007172DF /* MyriadPro-Cond.otf */,
+				9A4A759A172870D5007172DF /* MyriadPro-CondIt.otf */,
+				9A4A759B172870D5007172DF /* MyriadPro-It.otf */,
+				9A4A759C172870D5007172DF /* MyriadPro-Regular.otf */,
+				9A4A759D172870D5007172DF /* MyriadPro-Semibold.otf */,
+				9A4A759E172870D5007172DF /* MyriadPro-SemiboldIt.otf */,
+			);
+			path = "Myriad Pro";
+			sourceTree = "<group>";
+		};
+		9A4A759F172870D5007172DF /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				9A4A75A0172870D5007172DF /* Icon-72.png */,
+				9A4A75A1172870D5007172DF /* Icon-72@2x.png */,
+				9A4A75A2172870D5007172DF /* Icon-Small-50.png */,
+				9A4A75A3172870D5007172DF /* Icon-Small-50@2x.png */,
+				9A4A75A4172870D5007172DF /* Icon-Small.png */,
+				9A4A75A5172870D5007172DF /* Icon-Small@2x.png */,
+				9A4A75A6172870D5007172DF /* Icon.png */,
+				9A4A75A7172870D5007172DF /* Icon@2x.png */,
+				9A4A75A8172870D5007172DF /* iTunesArtwork.png */,
+				9A4A75A9172870D5007172DF /* iTunesArtwork@2x.png */,
 			);
 			path = Icons;
 			sourceTree = "<group>";
 		};
-		9A7627D31703419600C25348 /* Images */ = {
+		9A4A75AA172870D5007172DF /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				9A7627D41703419600C25348 /* Logo.png */,
+				9A4A75AB172870D5007172DF /* Logo.png */,
+				9A4A75AC172870D5007172DF /* Logo_big.png */,
+				9A4A75AD172870D5007172DF /* Sections */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		9A4A75AD172870D5007172DF /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				9A4A75AE172870D5007172DF /* ane.png */,
+				9A4A75AF172870D5007172DF /* features.png */,
+				9A4A75B0172870D5007172DF /* home.png */,
+				9A4A75B1172870D5007172DF /* news.png */,
+				9A4A75B2172870D5007172DF /* opinion.png */,
+				9A4A75B3172870D5007172DF /* sports.png */,
+			);
+			path = Sections;
 			sourceTree = "<group>";
 		};
 		9A9C67D71719F912009F26DB /* SectionView */ = {
@@ -204,7 +315,7 @@
 		9AB4D3EE16DD0C75009D073A = {
 			isa = PBXGroup;
 			children = (
-				9A7627B01703419600C25348 /* Resources */,
+				9A4A757A172870D5007172DF /* Resources */,
 				9AB4D40016DD0C76009D073A /* orientapp */,
 				9AB4D3F916DD0C76009D073A /* Frameworks */,
 				9AB4D3F816DD0C76009D073A /* Products */,
@@ -257,20 +368,6 @@
 				9AB4D41016DD0C76009D073A /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E46EF3A0171A01B600342DE9 /* Minion Pro */ = {
-			isa = PBXGroup;
-			children = (
-				E46EF3A1171A01B600342DE9 /* minionproboldit.ttf */,
-				E46EF3A2171A01B600342DE9 /* minionproit.ttf */,
-				E46EF3A3171A01B600342DE9 /* minionpromedium.ttf */,
-				E46EF3A4171A01B600342DE9 /* minionpromediumit.ttf */,
-				E46EF3A5171A01B600342DE9 /* minionproregular.ttf */,
-				E46EF3A6171A01B600342DE9 /* minionprosemibold.ttf */,
-				E46EF3A7171A01B600342DE9 /* minionprosemiboldit.ttf */,
-			);
-			path = "Minion Pro";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,35 +427,54 @@
 				9AB4D40F16DD0C76009D073A /* Default@2x.png in Resources */,
 				9AB4D41116DD0C76009D073A /* Default-568h@2x.png in Resources */,
 				9AB4D43516DD1431009D073A /* iPhoneStoryboard.storyboard in Resources */,
-				9A7627DF1703419600C25348 /* MyriadPro-Bold.otf in Resources */,
-				9A7627E01703419600C25348 /* MyriadPro-BoldCond.otf in Resources */,
-				9A7627E11703419600C25348 /* MyriadPro-BoldCondIt.otf in Resources */,
-				9A7627E21703419600C25348 /* MyriadPro-BoldIt.otf in Resources */,
-				9A7627E31703419600C25348 /* MyriadPro-Cond.otf in Resources */,
-				9A7627E41703419600C25348 /* MyriadPro-CondIt.otf in Resources */,
-				9A7627E51703419600C25348 /* MyriadPro-It.otf in Resources */,
-				9A7627E61703419600C25348 /* MyriadPro-Regular.otf in Resources */,
-				9A7627E71703419600C25348 /* MyriadPro-Semibold.otf in Resources */,
-				9A7627E81703419600C25348 /* MyriadPro-SemiboldIt.otf in Resources */,
-				9A7627E91703419600C25348 /* Icon-72.png in Resources */,
-				9A7627EA1703419600C25348 /* Icon-72@2x.png in Resources */,
-				9A7627EB1703419600C25348 /* Icon-Small-50.png in Resources */,
-				9A7627EC1703419600C25348 /* Icon-Small-50@2x.png in Resources */,
-				9A7627ED1703419600C25348 /* Icon-Small.png in Resources */,
-				9A7627EE1703419600C25348 /* Icon-Small@2x.png in Resources */,
-				9A7627EF1703419600C25348 /* Icon.png in Resources */,
-				9A7627F01703419600C25348 /* Icon@2x.png in Resources */,
-				9A7627F11703419600C25348 /* iTunesArtwork.png in Resources */,
-				9A7627F21703419600C25348 /* iTunesArtwork@2x.png in Resources */,
-				9A7627F31703419600C25348 /* Logo.png in Resources */,
-				E46EF3A8171A01B600342DE9 /* minionproboldit.ttf in Resources */,
-				E46EF3A9171A01B600342DE9 /* minionproit.ttf in Resources */,
-				E46EF3AA171A01B600342DE9 /* minionpromedium.ttf in Resources */,
-				E46EF3AB171A01B600342DE9 /* minionpromediumit.ttf in Resources */,
-				E46EF3AC171A01B600342DE9 /* minionproregular.ttf in Resources */,
-				E46EF3AD171A01B600342DE9 /* minionprosemibold.ttf in Resources */,
-				E46EF3AE171A01B600342DE9 /* minionprosemiboldit.ttf in Resources */,
 				9A344188171DA0BE0057B815 /* iPadStoryboard.storyboard in Resources */,
+				9A4A75B4172870D5007172DF /* minionproboldit.ttf in Resources */,
+				9A4A75B5172870D5007172DF /* minionproit.ttf in Resources */,
+				9A4A75B6172870D5007172DF /* minionpromedium.ttf in Resources */,
+				9A4A75B7172870D5007172DF /* minionpromediumit.ttf in Resources */,
+				9A4A75B8172870D5007172DF /* minionproregular.ttf in Resources */,
+				9A4A75B9172870D5007172DF /* minionprosemibold.ttf in Resources */,
+				9A4A75BA172870D5007172DF /* minionprosemiboldit.ttf in Resources */,
+				9A4A75BB172870D5007172DF /* MyriadPro-CondIt.otf in Resources */,
+				9A4A75BC172870D5007172DF /* MyriadPro-It.otf in Resources */,
+				9A4A75BD172870D5007172DF /* MyriadPro-Regular.otf in Resources */,
+				9A4A75BE172870D5007172DF /* MyriadPro-Semibold.otf in Resources */,
+				9A4A75BF172870D5007172DF /* MyriadPro-SemiboldIt.otf in Resources */,
+				9A4A75C0172870D5007172DF /* minionproboldit.ttf in Resources */,
+				9A4A75C1172870D5007172DF /* minionproit.ttf in Resources */,
+				9A4A75C2172870D5007172DF /* minionpromedium.ttf in Resources */,
+				9A4A75C3172870D5007172DF /* minionpromediumit.ttf in Resources */,
+				9A4A75C4172870D5007172DF /* minionproregular.ttf in Resources */,
+				9A4A75C5172870D5007172DF /* minionprosemibold.ttf in Resources */,
+				9A4A75C6172870D5007172DF /* minionprosemiboldit.ttf in Resources */,
+				9A4A75C7172870D5007172DF /* MyriadPro-Bold.otf in Resources */,
+				9A4A75C8172870D5007172DF /* MyriadPro-BoldCond.otf in Resources */,
+				9A4A75C9172870D5007172DF /* MyriadPro-BoldCondIt.otf in Resources */,
+				9A4A75CA172870D5007172DF /* MyriadPro-BoldIt.otf in Resources */,
+				9A4A75CB172870D5007172DF /* MyriadPro-Cond.otf in Resources */,
+				9A4A75CC172870D5007172DF /* MyriadPro-CondIt.otf in Resources */,
+				9A4A75CD172870D5007172DF /* MyriadPro-It.otf in Resources */,
+				9A4A75CE172870D5007172DF /* MyriadPro-Regular.otf in Resources */,
+				9A4A75CF172870D5007172DF /* MyriadPro-Semibold.otf in Resources */,
+				9A4A75D0172870D5007172DF /* MyriadPro-SemiboldIt.otf in Resources */,
+				9A4A75D1172870D5007172DF /* Icon-72.png in Resources */,
+				9A4A75D2172870D5007172DF /* Icon-72@2x.png in Resources */,
+				9A4A75D3172870D5007172DF /* Icon-Small-50.png in Resources */,
+				9A4A75D4172870D5007172DF /* Icon-Small-50@2x.png in Resources */,
+				9A4A75D5172870D5007172DF /* Icon-Small.png in Resources */,
+				9A4A75D6172870D5007172DF /* Icon-Small@2x.png in Resources */,
+				9A4A75D7172870D5007172DF /* Icon.png in Resources */,
+				9A4A75D8172870D5007172DF /* Icon@2x.png in Resources */,
+				9A4A75D9172870D5007172DF /* iTunesArtwork.png in Resources */,
+				9A4A75DA172870D5007172DF /* iTunesArtwork@2x.png in Resources */,
+				9A4A75DB172870D5007172DF /* Logo.png in Resources */,
+				9A4A75DC172870D5007172DF /* Logo_big.png in Resources */,
+				9A4A75DD172870D5007172DF /* ane.png in Resources */,
+				9A4A75DE172870D5007172DF /* features.png in Resources */,
+				9A4A75DF172870D5007172DF /* home.png in Resources */,
+				9A4A75E0172870D5007172DF /* news.png in Resources */,
+				9A4A75E1172870D5007172DF /* opinion.png in Resources */,
+				9A4A75E2172870D5007172DF /* sports.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
