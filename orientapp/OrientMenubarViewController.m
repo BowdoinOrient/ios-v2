@@ -40,7 +40,7 @@
 
 //uses code from http://mobile.tutsplus.com/tutorials/iphone/ios-6-and-the-social-framework-twitter-requests/
 - (IBAction)tweetButton:(id)sender {
-    // Request access to the Twitter accounts
+    /*// Request access to the Twitter accounts
     ACAccountStore *accountStore = [[ACAccountStore alloc] init];
     ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
     [accountStore requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error){
@@ -65,6 +65,6 @@
                                                   otherButtonTitles:nil];
             [alert show];
         }
-    }];
+    }];*/
 }
 @end
