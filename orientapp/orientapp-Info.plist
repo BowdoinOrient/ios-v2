@@ -39,6 +39,16 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>minionproboldit.ttf</string>
+		<string>minionproit.ttf</string>
+		<string>minionpromedium.ttf</string>
+		<string>minionpromediumit.ttf</string>
+		<string>minionproregular.ttf</string>
+		<string>minionprosemibold.ttf</string>
+		<string>minionprosemiboldit.ttf</string>
+	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>iPhoneStoryboard</string>
 	<key>UIMainStoryboardFile~ipad</key>
@@ -60,16 +70,7 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>minionproboldit.ttf</string>
-		<string>minionproit.ttf</string>
-		<string>minionpromedium.ttf</string>
-		<string>minionpromediumit.ttf</string>
-		<string>minionproregular.ttf</string>
-		<string>minionprosemibold.ttf</string>
-		<string>minionprosemiboldit.ttf</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 </dict>
 </plist>
