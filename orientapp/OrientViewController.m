@@ -38,12 +38,9 @@
     [self.webView loadRequest:requestObj];
     self.webView.delegate = self;
     
-    
     self.activityIndicator.hidden = YES;
     self.activityIndicator.hidesWhenStopped = YES;
     self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-    
-
     
     [self.sectionLabel setFont:[UIFont fontWithName:@"Minion Pro Med" size:8]];
     
@@ -51,8 +48,6 @@
     
     self.sectionScrollView.pagingEnabled = YES;
     self.sectionScrollView.delegate = self;
-    
-    
     
     CGFloat xPos = 0;
     CGFloat yPos = self.sectionScrollView.frame.origin.y;
@@ -108,6 +103,8 @@
     }
     self.sectionScrollView.contentSize = CGSizeMake(self.view.frame.size.width * numberOfSections, self.sectionScrollView.frame.size.height);
 
+    
+    NSLog(@"%@",self.mostRecentIssueDate);
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -285,7 +282,15 @@
 }
 
 - (BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
-    if([request.URL.host isEqual:@"bowdoinorient.com"]){
+    if (![self.presentedViewController isBeingDismissed]) {
+        [self dismissViewControllerAnimated:YES completion:^{}];
+    }
+    
+    //DEM REGEX
+    NSString *bocomRegex = @"http://(www\.)?bowdoinorient\.com(/(browse|article|series|author)/?.+?)?";
+    NSPredicate *urlTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", bocomRegex];
+    
+    if([urlTest evaluateWithObject:request.URL.absoluteString]){
         NSString *redirectURL = [request.URL.absoluteString stringByAppendingString:@"/chromeless"];
         NSURL *url = [NSURL URLWithString:redirectURL];
         NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
@@ -295,7 +300,29 @@
     }
     return YES;
 }
+
+- (NSString *)mostRecentIssueDate:(NSDate *) date {
+    NSLocale *MURRICA = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
+    [dateFormat setLocale:MURRICA];
+    [dateFormat setDateFormat:@"e"];
     
+    int dayOfWeek = [[dateFormat stringFromDate:date]intValue];
+    int daysSinceLastFriday = (dayOfWeek - 6)%7; //friday is the 6th day of the week in the US locale
+    if(daysSinceLastFriday<0)
+        daysSinceLastFriday+=7;
+    
+    NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
+    NSDateComponents *dateComponents = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit| NSDayCalendarUnit) fromDate:[NSDate date]];
+    NSDateComponents *futureComponents = [[NSDateComponents alloc] init];
+    futureComponents.day = -1*daysSinceLastFriday;
+    NSDate *lastFriday = [calendar dateByAddingComponents:futureComponents toDate:[calendar dateFromComponents:dateComponents] options:0];
+    [dateFormat setDateFormat:@"yyyy-MM-dd"];
+    
+    return [dateFormat stringFromDate:lastFriday];
+}
+
+
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"modal"])
