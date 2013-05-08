@@ -77,15 +77,20 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.27953788969999999" green="0.78596297550000005" blue="0.56090111799999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" id="84V-iV-Qb7">
+                                <rect key="frame" x="150" y="275" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="T1s-YV-9F1"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="84V-iV-Qb7" id="3at-L7-IEz"/>
                         <outlet property="bottomMenu" destination="IZC-c9-vDp" id="jpG-xZ-3Qf"/>
                         <outlet property="sectionButton" destination="MCz-ub-Ns0" id="Mrg-Xz-jyy"/>
                         <outlet property="sectionScrollView" destination="a2M-e1-wuS" id="vdE-AR-nXa"/>
-                        <outlet property="webView" destination="LXj-8H-mhd" id="0Ef-Dk-Gec"/>
+                        <outlet property="webView" destination="LXj-8H-mhd" id="y3S-0r-gY9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EPo-uJ-dwE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -96,6 +101,23 @@
     <resources>
         <image name="Logo.png" width="978" height="191"/>
     </resources>
+    <classes>
+        <class className="OrientMenubarView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OrientMenubarView.h"/>
+        </class>
+        <class className="OrientViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OrientViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="homeButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="bottomMenu" candidateClass="OrientMenubarView"/>
+                <relationship kind="outlet" name="sectionButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sectionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sectionScrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

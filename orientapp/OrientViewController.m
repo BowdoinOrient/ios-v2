@@ -13,6 +13,8 @@
 @implementation OrientViewController
 
 @synthesize webView = _webView;
+@synthesize activityIndicator = _activityIndicator;
+@synthesize sectionScrollView = _sectionScrollView;
 @synthesize bottomMenu = _bottomMenu;
 @synthesize sectionLabel = _sectionLabel;
 @synthesize sectionButton = _sectionButton;
@@ -111,6 +113,19 @@
     } else {
         [self.bottomMenu setHidden:TRUE];
     }
+}
+
+- (BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
+    NSLog(@"hi");
+    return NO;
+}
+
+-(void)webViewDidStartLoad:(UIWebView *)webView {
+    [activityIndicator startAnimating];
+}
+
+-(void)webViewDidFinishLoad:(UIWebView *)webView {
+    [activityIndicator stopAnimating];
 }
 
 /* we don't have one of these anymore
