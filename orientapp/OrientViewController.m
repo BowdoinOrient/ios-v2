@@ -32,7 +32,7 @@
     
     self.haveShownModal = NO;
     
-    NSString *fullURL = @"http://www.bowdoinorient.com";
+    NSString *fullURL = @"http://bowdoinorient.com";
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:requestObj];
@@ -102,7 +102,7 @@
         //label.userInteractionEnabled = YES;
         
         [self.sectionScrollView addSubview:view];
-        NSLog(@"1 xPos = %f", xPos);
+        //NSLog(@"1 xPos = %f", xPos);
         //xPos += width;
         //NSLog(@"2 xPos = %f", xPos);
     }
@@ -154,54 +154,54 @@
     switch (self.page) {
         case 0:
             NSLog(@"page number is %d", self.page);
-            loadURL = @"http://www.bowdoinorient.com";
-            //                NSString *fullURL = @"http://www.bowdoinorient.com";
+            loadURL = @"http://bowdoinorient.com";
+            //                NSString *fullURL = @"http://bowdoinorient.com";
             //                NSURL *url = [NSURL URLWithString:fullURL];
             //                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
             //                [self.webView loadRequest:requestObj];
             break;
         case 1:
             NSLog(@"page number is %d", self.page);
-            loadURL= @"http://www.bowdoinorient.com/browse/#News";
-            //                NSString *fullURL = @"http://www.bowdoinorient.com/browse/#News";
+            loadURL= @"http://bowdoinorient.com/browse/#News";
+            //                NSString *fullURL = @"http://bowdoinorient.com/browse/#News";
             //                NSURL *url = [NSURL URLWithString:fullURL];
             //                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
             //                [self.webView loadRequest:requestObj];
             break;
         case 2:
             NSLog(@"page number is %d", self.page);
-            loadURL = @"http://www.bowdoinorient.com/browse/#Opinion";
-            //NSString *fullURL = @"http://www.bowdoinorient.com/browse/#Opinion";
+            loadURL = @"http://bowdoinorient.com/browse/#Opinion";
+            //NSString *fullURL = @"http://bowdoinorient.com/browse/#Opinion";
             //                NSURL *url = [NSURL URLWithString:fullURL];
             //                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
             //                [self.webView loadRequest:requestObj];
             break;
         case 3:
             NSLog(@"page number is %d", self.page);
-            loadURL = @"http://www.bowdoinorient.com/browse/#Features";
-            //                NSString *fullURL = @"http://www.bowdoinorient.com/browse/#Features";
+            loadURL = @"http://bowdoinorient.com/browse/#Features";
+            //                NSString *fullURL = @"http://bowdoinorient.com/browse/#Features";
             //                NSURL *url = [NSURL URLWithString:fullURL];
             //                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
             //                [self.webView loadRequest:requestObj];
             break;
         case 4:
             NSLog(@"page number is %d", self.page);
-            loadURL = @"http://www.bowdoinorient.com/browse/#Arts%20&%20Entertainment";
-            //                NSString *fullURL = @"http://www.bowdoinorient.com/browse/#Arts & Entertainment";
+            loadURL = @"http://bowdoinorient.com/browse/#Arts%20&%20Entertainment";
+            //                NSString *fullURL = @"http://bowdoinorient.com/browse/#Arts & Entertainment";
             //                NSURL *url = [NSURL URLWithString:fullURL];
             //                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
             //                [self.webView loadRequest:requestObj];
             break;
         case 5:
             NSLog(@"page number is %d", self.page);
-            loadURL = @"http://www.bowdoinorient.com/browse/#Sports";
-            //                NSString *fullURL = @"http://www.bowdoinorient.com/browse/#Sports";
+            loadURL = @"http://bowdoinorient.com/browse/#Sports";
+            //                NSString *fullURL = @"http://bowdoinorient.com/browse/#Sports";
             //                NSURL *url = [NSURL URLWithString:fullURL];
             //                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
             //                [self.webView loadRequest:requestObj];
             break;
             
-        default:loadURL = @"http://www.bowdoinorient.com";
+        default:loadURL = @"http://bowdoinorient.com";
             break;
             
     }
@@ -224,48 +224,48 @@
 //    {
 //        switch (self.page) {
 //            case 0:
-//                loadURL = @"http://www.bowdoinorient.com";
-////                NSString *fullURL = @"http://www.bowdoinorient.com";
+//                loadURL = @"http://bowdoinorient.com";
+////                NSString *fullURL = @"http://bowdoinorient.com";
 ////                NSURL *url = [NSURL URLWithString:fullURL];
 ////                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
 ////                [self.webView loadRequest:requestObj];
 //                break;
 //            case 1:
-//                loadURL= @"http://www.bowdoinorient.com/browse/#News";
-////                NSString *fullURL = @"http://www.bowdoinorient.com/browse/#News";
+//                loadURL= @"http://bowdoinorient.com/browse/#News";
+////                NSString *fullURL = @"http://bowdoinorient.com/browse/#News";
 ////                NSURL *url = [NSURL URLWithString:fullURL];
 ////                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
 ////                [self.webView loadRequest:requestObj];
 //                break;
 //            case 2:
-//                loadURL = @"http://www.bowdoinorient.com/browse/#Opinion";
-//                //NSString *fullURL = @"http://www.bowdoinorient.com/browse/#Opinion";
+//                loadURL = @"http://bowdoinorient.com/browse/#Opinion";
+//                //NSString *fullURL = @"http://bowdoinorient.com/browse/#Opinion";
 ////                NSURL *url = [NSURL URLWithString:fullURL];
 ////                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
 ////                [self.webView loadRequest:requestObj];
 //                break;
 //            case 3:
-//                loadURL = @"http://www.bowdoinorient.com/browse/#Features";
-////                NSString *fullURL = @"http://www.bowdoinorient.com/browse/#Features";
+//                loadURL = @"http://bowdoinorient.com/browse/#Features";
+////                NSString *fullURL = @"http://bowdoinorient.com/browse/#Features";
 ////                NSURL *url = [NSURL URLWithString:fullURL];
 ////                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
 ////                [self.webView loadRequest:requestObj];
 //                break;
 //            case 4:
-//                loadURL = @"http://www.bowdoinorient.com/browse/#Arts & Entertainment";
-////                NSString *fullURL = @"http://www.bowdoinorient.com/browse/#Arts & Entertainment";
+//                loadURL = @"http://bowdoinorient.com/browse/#Arts & Entertainment";
+////                NSString *fullURL = @"http://bowdoinorient.com/browse/#Arts & Entertainment";
 ////                NSURL *url = [NSURL URLWithString:fullURL];
 ////                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
 ////                [self.webView loadRequest:requestObj];
 //                break;
 //            case 5:
-//                loadURL = @"http://www.bowdoinorient.com/browse/#Sports";
-////                NSString *fullURL = @"http://www.bowdoinorient.com/browse/#Sports";
+//                loadURL = @"http://bowdoinorient.com/browse/#Sports";
+////                NSString *fullURL = @"http://bowdoinorient.com/browse/#Sports";
 ////                NSURL *url = [NSURL URLWithString:fullURL];
 ////                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
 ////                [self.webView loadRequest:requestObj];
 //                
-//            default:loadURL = @"http://www.bowdoinorient.com";
+//            default:loadURL = @"http://bowdoinorient.com";
 //                break;
 //                
 //                NSString *fullURL = loadURL;
@@ -278,13 +278,23 @@
 //}
 
 - (IBAction)homeButtonPressed:(UIButton *)sender {
-    NSString *fullURL = @"http://www.bowdoinorient.com";
+    NSString *fullURL = @"http://bowdoinorient.com";
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:requestObj];
 }
 
-
+- (BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
+    if([request.URL.host isEqual:@"bowdoinorient.com"]){
+        NSString *redirectURL = [request.URL.absoluteString stringByAppendingString:@"/chromeless"];
+        NSURL *url = [NSURL URLWithString:redirectURL];
+        NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+        NSLog(@"I'd redirect you to %@, if it were working.",url);
+        //[self.webView loadRequest:requestObj];
+        //return NO;
+    }
+    return YES;
+}
     
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
