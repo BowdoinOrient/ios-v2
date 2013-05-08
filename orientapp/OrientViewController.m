@@ -13,6 +13,7 @@
 @implementation OrientViewController
 
 @synthesize webView = _webView;
+@synthesize bottomMenu = _bottomMenu;
 @synthesize sectionLabel = _sectionLabel;
 @synthesize sectionButton = _sectionButton;
 
@@ -26,6 +27,13 @@
     [self.webView loadRequest:requestObj];
     
     [self.sectionLabel setFont:[UIFont fontWithName:@"Minion Pro Med" size:8]];
+    
+    //stuff for the hidden menu
+    [self.bottomMenu setHidden:YES];
+    self.isMenubarHidden = YES;
+    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
+    [doubleTap setNumberOfTapsRequired:2];
+    [self.webView addGestureRecognizer:doubleTap];
     
     // section scroll view setup
     
@@ -78,13 +86,15 @@
         //label.userInteractionEnabled = YES;
         
         [self.sectionScrollView addSubview:view];
-        NSLog(@"1 xPos = %f", xPos);
+        //NSLog(@"1 xPos = %f", xPos);
         //xPos += width;
         //NSLog(@"2 xPos = %f", xPos);
     }
     self.sectionScrollView.contentSize = CGSizeMake(self.view.frame.size.width * numberOfSections, self.sectionScrollView.frame.size.height);
 
 }
+
+
 
 - (IBAction)homeButtonPressed:(UIButton *)sender {
     NSString *fullURL = @"http://www.bowdoinorient.com";
@@ -93,9 +103,22 @@
     [self.webView loadRequest:requestObj];
 }
 
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+
+- (void)handleDoubleTap:(UIGestureRecognizer *)gestureRecognizer {
+    NSLog(@"tapped");
+    if (self.isMenubarHidden){
+        [self.bottomMenu setHidden:FALSE];
+    } else {
+        [self.bottomMenu setHidden:TRUE];
+    }
+}
+
+/* we don't have one of these anymore
+ - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     OrientSectionViewController* orientSectionViewController = (OrientSectionViewController*)[segue destinationViewController];
 }
+ */
+
 
 @end

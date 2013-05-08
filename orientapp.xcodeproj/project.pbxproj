@@ -66,10 +66,8 @@
 		9AB4D41116DD0C76009D073A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AB4D41016DD0C76009D073A /* Default-568h@2x.png */; };
 		9AB4D43516DD1431009D073A /* iPhoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AB4D43416DD1431009D073A /* iPhoneStoryboard.storyboard */; };
 		9AB4D43C16DD164D009D073A /* OrientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB4D43B16DD164D009D073A /* OrientViewController.m */; };
-		9AC2E748170B75BC00DE53F1 /* OrientWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2E747170B75BC00DE53F1 /* OrientWebView.m */; };
 		9AE4E2ED1728831600A9DC2F /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE4E2EC1728831600A9DC2F /* Social.framework */; };
 		9AE4E2F31728834200A9DC2F /* OrientMenubarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE4E2EF1728834200A9DC2F /* OrientMenubarView.m */; };
-		9AE4E2F41728834200A9DC2F /* OrientMenubarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AE4E2F01728834200A9DC2F /* OrientMenubarView.xib */; };
 		9AE4E2F51728834200A9DC2F /* OrientMenubarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE4E2F21728834200A9DC2F /* OrientMenubarViewController.m */; };
 		E49AC7BE1728787F00585469 /* OrientSectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49AC7BD1728787F00585469 /* OrientSectionViewController.m */; };
 		E49AC7C1172878B700585469 /* OrientSection.m in Sources */ = {isa = PBXBuildFile; fileRef = E49AC7C0172878B700585469 /* OrientSection.m */; };
@@ -140,12 +138,9 @@
 		9AB4D43416DD1431009D073A /* iPhoneStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhoneStoryboard.storyboard; sourceTree = "<group>"; };
 		9AB4D43A16DD164D009D073A /* OrientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientViewController.h; sourceTree = "<group>"; };
 		9AB4D43B16DD164D009D073A /* OrientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientViewController.m; sourceTree = "<group>"; };
-		9AC2E746170B75BC00DE53F1 /* OrientWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientWebView.h; sourceTree = "<group>"; };
-		9AC2E747170B75BC00DE53F1 /* OrientWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientWebView.m; sourceTree = "<group>"; };
 		9AE4E2EC1728831600A9DC2F /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		9AE4E2EE1728834200A9DC2F /* OrientMenubarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientMenubarView.h; sourceTree = "<group>"; };
 		9AE4E2EF1728834200A9DC2F /* OrientMenubarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientMenubarView.m; sourceTree = "<group>"; };
-		9AE4E2F01728834200A9DC2F /* OrientMenubarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrientMenubarView.xib; sourceTree = "<group>"; };
 		9AE4E2F11728834200A9DC2F /* OrientMenubarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientMenubarViewController.h; sourceTree = "<group>"; };
 		9AE4E2F21728834200A9DC2F /* OrientMenubarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientMenubarViewController.m; sourceTree = "<group>"; };
 		E49AC7BC1728787F00585469 /* OrientSectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientSectionViewController.h; sourceTree = "<group>"; };
@@ -308,7 +303,6 @@
 			children = (
 				9AE4E2EE1728834200A9DC2F /* OrientMenubarView.h */,
 				9AE4E2EF1728834200A9DC2F /* OrientMenubarView.m */,
-				9AE4E2F01728834200A9DC2F /* OrientMenubarView.xib */,
 				9AE4E2F11728834200A9DC2F /* OrientMenubarViewController.h */,
 				9AE4E2F21728834200A9DC2F /* OrientMenubarViewController.m */,
 			);
@@ -372,8 +366,6 @@
 				9A9C67D81719F91F009F26DB /* Storyboards */,
 				9A4A75E81728767F007172DF /* MenuBar */,
 				9A9C67D71719F912009F26DB /* SectionView */,
-				9AC2E747170B75BC00DE53F1 /* OrientWebView.m */,
-				9AC2E746170B75BC00DE53F1 /* OrientWebView.h */,
 				9AB4D43B16DD164D009D073A /* OrientViewController.m */,
 				9AB4D43A16DD164D009D073A /* OrientViewController.h */,
 				9AB4D40116DD0C76009D073A /* Supporting Files */,
@@ -500,7 +492,6 @@
 				9A4A75E0172870D5007172DF /* news.png in Resources */,
 				9A4A75E1172870D5007172DF /* opinion.png in Resources */,
 				9A4A75E2172870D5007172DF /* sports.png in Resources */,
-				9AE4E2F41728834200A9DC2F /* OrientMenubarView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,7 +505,6 @@
 				9AB4D40716DD0C76009D073A /* main.m in Sources */,
 				9AB4D40B16DD0C76009D073A /* OrientAppDelegate.m in Sources */,
 				9AB4D43C16DD164D009D073A /* OrientViewController.m in Sources */,
-				9AC2E748170B75BC00DE53F1 /* OrientWebView.m in Sources */,
 				E49AC7BE1728787F00585469 /* OrientSectionViewController.m in Sources */,
 				E49AC7C1172878B700585469 /* OrientSection.m in Sources */,
 				9AE4E2F31728834200A9DC2F /* OrientMenubarView.m in Sources */,
