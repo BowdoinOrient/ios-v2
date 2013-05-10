@@ -72,6 +72,7 @@
 		9AE4E2F51728834200A9DC2F /* OrientMenubarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE4E2F21728834200A9DC2F /* OrientMenubarViewController.m */; };
 		E49AC7BE1728787F00585469 /* OrientSectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49AC7BD1728787F00585469 /* OrientSectionViewController.m */; };
 		E49AC7C1172878B700585469 /* OrientSection.m in Sources */ = {isa = PBXBuildFile; fileRef = E49AC7C0172878B700585469 /* OrientSection.m */; };
+		E4A9D49D173C112E00799FA9 /* testRefreshButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E4A9D49C173C112E00799FA9 /* testRefreshButton.png */; };
 		E4FAFC781739BAEF00EABE47 /* OrientSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FAFC771739BAEF00EABE47 /* OrientSplashViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -150,6 +151,7 @@
 		E49AC7BD1728787F00585469 /* OrientSectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientSectionViewController.m; sourceTree = "<group>"; };
 		E49AC7BF172878B700585469 /* OrientSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientSection.h; sourceTree = "<group>"; };
 		E49AC7C0172878B700585469 /* OrientSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientSection.m; sourceTree = "<group>"; };
+		E4A9D49C173C112E00799FA9 /* testRefreshButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testRefreshButton.png; sourceTree = "<group>"; };
 		E4FAFC761739BAEF00EABE47 /* OrientSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientSplashViewController.h; sourceTree = "<group>"; };
 		E4FAFC771739BAEF00EABE47 /* OrientSplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientSplashViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -266,6 +268,7 @@
 		9A4A759F172870D5007172DF /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				E4A9D49C173C112E00799FA9 /* testRefreshButton.png */,
 				9A4A75A0172870D5007172DF /* Icon-72.png */,
 				9A4A75A1172870D5007172DF /* Icon-72@2x.png */,
 				9A4A75A2172870D5007172DF /* Icon-Small-50.png */,
@@ -501,6 +504,7 @@
 				9A4A75E1172870D5007172DF /* opinion.png in Resources */,
 				9A4A75E2172870D5007172DF /* sports.png in Resources */,
 				9AE4E2F41728834200A9DC2F /* OrientMenubarView.xib in Resources */,
+				E4A9D49D173C112E00799FA9 /* testRefreshButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

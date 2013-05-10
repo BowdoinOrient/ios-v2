@@ -14,14 +14,11 @@
 
 
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) IBOutlet UIScrollView *sectionScrollView;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 - (IBAction)homeButtonPressed:(UIButton *)sender;
-@property (strong, nonatomic) IBOutlet UILabel *sectionLabel;
-@property (strong, nonatomic) IBOutlet UIButton *sectionButton;
-@property (strong, nonatomic) IBOutlet UIScrollView *sectionScrollView;
 - (IBAction)loadSection:(UIButton *)sender;
-@property (strong, nonatomic) IBOutlet UIButton *loadButton;
-@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-@property (nonatomic) IBOutlet OrientSplashViewController* modal;
+
 
 @end
