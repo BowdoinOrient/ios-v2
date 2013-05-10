@@ -102,9 +102,6 @@
         //NSLog(@"2 xPos = %f", xPos);
     }
     self.sectionScrollView.contentSize = CGSizeMake(self.view.frame.size.width * numberOfSections, self.sectionScrollView.frame.size.height);
-
-    
-    NSLog(@"%@",self.mostRecentIssueDate);
 }
 
 - (void)viewDidAppear:(BOOL)animated
