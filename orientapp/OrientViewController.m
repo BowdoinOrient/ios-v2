@@ -183,52 +183,22 @@
     
     switch (self.page) {
         case 0:
-            //NSLog(@"page number is %d", self.page);
             loadURL = @"http://bowdoinorient.dev/browse/2013-02-22/chromeless/";
-            //                self.currURL = @"http://bowdoinorient.dev";
-            //                NSURL *url = [NSURL URLWithString:fullURL];
-            //                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-            //                [self.webView loadRequest:requestObj];
             break;
         case 1:
-            //NSLog(@"page number is %d", self.page);
             loadURL= @"http://bowdoinorient.dev/browse/2013-02-22/chromeless/#News";
-            //                self.currURL = @"http://bowdoinorient.dev/browse/#News";
-            //                NSURL *url = [NSURL URLWithString:fullURL];
-            //                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-            //                [self.webView loadRequest:requestObj];
             break;
         case 2:
-            //NSLog(@"page number is %d", self.page);
             loadURL = @"http://bowdoinorient.dev/browse/2013-02-22/chromeless/#Opinion";
-            //self.currURL = @"http://bowdoinorient.dev/browse/#Opinion";
-            //                NSURL *url = [NSURL URLWithString:fullURL];
-            //                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-            //                [self.webView loadRequest:requestObj];
             break;
         case 3:
-            //NSLog(@"page number is %d", self.page);
             loadURL = @"http://bowdoinorient.dev/browse/2013-02-22/chromeless/#Features";
-            //                self.currURL = @"http://bowdoinorient.dev/browse/#Features";
-            //                NSURL *url = [NSURL URLWithString:fullURL];
-            //                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-            //                [self.webView loadRequest:requestObj];
             break;
         case 4:
-            //NSLog(@"page number is %d", self.page);
             loadURL = @"http://bowdoinorient.dev/browse/2013-02-22/chromeless/#Arts%20&%20Entertainment";
-            //                self.currURL = @"http://bowdoinorient.dev/browse/#Arts & Entertainment";
-            //                NSURL *url = [NSURL URLWithString:fullURL];
-            //                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-            //                [self.webView loadRequest:requestObj];
             break;
         case 5:
-            //NSLog(@"page number is %d", self.page);
             loadURL = @"http://bowdoinorient.dev/browse/2013-02-22/chromeless/#Sports";
-            //                self.currURL = @"http://bowdoinorient.dev/browse/#Sports";
-            //                NSURL *url = [NSURL URLWithString:fullURL];
-            //                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-            //                [self.webView loadRequest:requestObj];
             break;
             
         default:loadURL = @"http://bowdoinorient.dev/browse/2013-02-22/chromeless/";
@@ -268,6 +238,7 @@
     //it's formed like a URL that should be chromeless, but doesn't have the "chromeless" already
     if([urlTest evaluateWithObject:request.URL.absoluteString] && ![urlTest2 evaluateWithObject:request.URL.absoluteString]){
         NSString *redirectURL = [request.URL.absoluteString stringByAppendingString:@"/chromeless"];
+        self.currURL = redirectURL;
         NSURL *url = [NSURL URLWithString:redirectURL];
         NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
         //NSLog(@"I'd redirect you to %@, if it were working.",url);
