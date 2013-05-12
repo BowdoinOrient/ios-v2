@@ -259,8 +259,7 @@
     
     //it's formed like a URL that should be chromeless, but doesn't have the "chromeless" already
     if([urlTest evaluateWithObject:request.URL.absoluteString] && ![urlTest2 evaluateWithObject:request.URL.absoluteString]){
-        self.currURL = request.URL.absoluteString;
-        NSString *redirectURL = [self.currURL stringByAppendingString:@"/chromeless"];
+        NSString *redirectURL = [request.URL.absoluteString stringByAppendingString:@"/chromeless"];
         NSURL *url = [NSURL URLWithString:redirectURL];
         NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
         //NSLog(@"I'd redirect you to %@, if it were working.",url);
@@ -329,8 +328,10 @@
     {
         SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         [tweetSheet setInitialText:@"via @bowdoinorient: "];
-        if (self.currURL)
+        if (self.currURL){
+            self.currURL = [self.currURL stringByReplacingOccurrencesOfString:@"/chromeless" withString:@""];
             [tweetSheet addURL:[NSURL URLWithString:self.currURL]];
+        }
         [self presentViewController:tweetSheet animated:YES completion:nil];
     }
     else
@@ -352,9 +353,10 @@
     {
         SLComposeViewController *fbSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         [fbSheet setInitialText:@"via The Bowdoin Orient: "];
-        if (self.currURL)
+        if (self.currURL){
+            self.currURL = [self.currURL stringByReplacingOccurrencesOfString:@"/chromeless" withString:@""];
             [fbSheet addURL:[NSURL URLWithString:self.currURL]];
-
+        }
         [self presentViewController:fbSheet animated:YES completion:nil];
     }
     else
