@@ -232,8 +232,6 @@
     NSURL *url = [NSURL URLWithString:self.currURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:requestObj];
-    
-    
 }
 
 
@@ -242,6 +240,8 @@
     NSURL *url = [NSURL URLWithString:self.currURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:requestObj];
+    [self.sectionScrollView scrollRectToVisible:CGRectMake(0,0,self.sectionScrollView.frame.size.width,self.sectionScrollView.frame.size.height)
+                                       animated:YES];
 }
 
 
@@ -328,7 +328,9 @@
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
         SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [tweetSheet setInitialText:[self.currURL stringByAppendingString:@" via @bowdoinorient"]];
+        [tweetSheet setInitialText:@"via @bowdoinorient: "];
+        if (self.currURL)
+            [tweetSheet addURL:[NSURL URLWithString:self.currURL]];
         [self presentViewController:tweetSheet animated:YES completion:nil];
     }
     else
@@ -349,7 +351,10 @@
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
     {
         SLComposeViewController *fbSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-        [fbSheet setInitialText:[self.currURL stringByAppendingString:@" via @bowdoinorient"]];
+        [fbSheet setInitialText:@"via The Bowdoin Orient: "];
+        if (self.currURL)
+            [fbSheet addURL:[NSURL URLWithString:self.currURL]];
+
         [self presentViewController:fbSheet animated:YES completion:nil];
     }
     else
