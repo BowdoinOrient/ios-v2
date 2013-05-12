@@ -324,105 +324,48 @@
     return YES;
 }
 
+// Post a tweet to Twitter about the current URL
+// Uses code from http://www.raywenderlich.com/21558/beginning-twitter-tutorial-updated-for-ios-6
 -(IBAction)tweetButton:(id)sender {
-    //get the Twitter account token
-    // Request access to the Twitter accounts
-    ACAccountStore *accountStore = [[ACAccountStore alloc] init];
-    ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
-    [accountStore requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error){
-        if (granted) {
-            NSArray *accounts = [accountStore accountsWithAccountType:accountType];
-            // Check if the users has setup at least one Twitter account
-            if (accounts.count > 0)
-            {
-                ACAccount *twitterAccount = [accounts objectAtIndex:0];
-                // Creating a request to get the info about a user on Twitter
-                SLRequest *twitterInfoRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:[NSURL URLWithString:@"https://api.twitter.com/1.1/users/show.json"] parameters:[NSDictionary dictionaryWithObject:twitterAccount.username forKey:@"screen_name"]];
-                [twitterInfoRequest setAccount:twitterAccount];
-                // Making the request
-                [twitterInfoRequest performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        // Check if we reached the reate limit
-                        if ([urlResponse statusCode] == 429) {
-                            NSLog(@"Rate limit reached");
-                            return;
-                        }
-                        // Check if there was an error
-                        if (error) {
-                            NSLog(@"Error: %@", error.localizedDescription);
-                            return;
-                        }
-                        // Check if there is some response data
-                        if (responseData) {
-                            /*NSError *error = nil;
-                            NSArray *TWData = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:&error];
-                            // Filter the preferred data
-                            NSString *screen_name = [(NSDictionary *)TWData objectForKey:@"screen_name"];
-                            NSString *name = [(NSDictionary *)TWData objectForKey:@"name"];
-                            int followers = [[(NSDictionary *)TWData objectForKey:@"followers_count"] integerValue];
-                            int following = [[(NSDictionary *)TWData objectForKey:@"friends_count"] integerValue];
-                            int tweets = [[(NSDictionary *)TWData objectForKey:@"statuses_count"] integerValue];
-                            NSString *profileImageStringURL = [(NSDictionary *)TWData objectForKey:@"profile_image_url_https"];
-                            NSString *bannerImageStringURL =[(NSDictionary *)TWData objectForKey:@"profile_banner_url"];
-                            // Update the interface with the loaded data
-                            nameLabel.text = name;
-                            usernameLabel.text= [NSString stringWithFormat:@"@%@",screen_name];
-                            tweetsLabel.text = [NSString stringWithFormat:@"%i", tweets];
-                            followingLabel.text= [NSString stringWithFormat:@"%i", following];
-                            followersLabel.text = [NSString stringWithFormat:@"%i", followers];
-                            NSString *lastTweet = [[(NSDictionary *)TWData objectForKey:@"status"] objectForKey:@"text"];
-                            lastTweetTextView.text= lastTweet;
-                            // Get the profile image in the original resolution
-                            profileImageStringURL = [profileImageStringURL stringByReplacingOccurrencesOfString:@"_normal" withString:@""];
-                            [self getProfileImageForURLString:profileImageStringURL];
-                            // Get the banner image, if the user has one
-                            if (bannerImageStringURL) {
-                                NSString *bannerURLString = [NSString stringWithFormat:@"%@/mobile_retina", bannerImageStringURL];
-                                [self getBannerImageForURLString:bannerURLString];
-                            } else {
-                                bannerImageView.backgroundColor = [UIColor underPageBackgroundColor];
-                            }*/
-                        }
-                    });
-                }];
-            }
-        } else {
-            NSLog(@"No access granted");
-        }
-    }];
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        [tweetSheet setInitialText:@"DAT TWEETER"];
+        [self presentViewController:tweetSheet animated:YES completion:nil];
+    }
+    else
+    {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"Sorry"
+                                  message:@"You can't send a tweet right now! Please make sure your device has an internet connection and you have at least one Twitter account set up."
+                                  delegate:self
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles:nil];
+        [alertView show];
+    }
+    self.menubarView.hidden = YES;
 }
 
+//Post an update to Facebook about the current URL
+//borrows code from http://stackoverflow.com/a/14044826/2178152
 - (IBAction)fbButton:(id)sender {
-    //get the Facebook account token
-    // Initialize the account store
-    self.accountStore = [[ACAccountStore alloc] init];
-    
-    // Get the Facebook account type for the access request
-    ACAccountType *fbAccountType = [self.accountStore
-                                    accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierFacebook];
-    
-    // Request access to the Facebook account with the access info
-    [self.accountStore requestAccessToAccountsWithType:fbAccountType
-                                               options:NULL
-                                            completion:^(BOOL granted, NSError *error) {
-                                                if (granted) {
-                                                    // If access granted, then get the Facebook account info
-                                                    NSArray *accounts = [self.accountStore
-                                                                         accountsWithAccountType:fbAccountType];
-                                                    self.fbAccount = [accounts lastObject];
-                                                    
-                                                    // Get the access token, could be used in other scenarios
-                                                    ACAccountCredential *fbCredential = [self.fbAccount credential];            
-                                                    NSString *accessToken = [fbCredential oauthToken];
-                                                    NSLog(@"Facebook Access Token: %@", accessToken);
-                                                    
-                                                    
-                                                    // Add code here to make an API request using the SLRequest class
-                                                    
-                                                } else {
-                                                    NSLog(@"Access not granted");
-                                                }
-                                            }];
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+    {
+        SLComposeViewController *fbSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        [fbSheet setInitialText:@"DAT FACEBOOK"];
+        [self presentViewController:fbSheet animated:YES completion:nil];
+    }
+    else
+    {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"Sorry"
+                                  message:@"You can't send a tweet right now! Please make sure your device has an internet connection and you have at least one Twitter account set up."
+                                  delegate:self
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles:nil];
+        [alertView show];
+    }
+    self.menubarView.hidden = YES;
 }
 
 
