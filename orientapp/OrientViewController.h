@@ -19,8 +19,11 @@
 
 - (IBAction)homeButtonPressed:(UIButton *)sender;
 - (IBAction)loadSection:(UIButton *)sender;
+- (IBAction)tweetButton:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIView *menubarView;
-@property (weak, nonatomic) IBOutlet UIButton *tweetButton;
+@property (weak, nonatomic) IBOutlet UIView *topView;
+
+
 
 @end

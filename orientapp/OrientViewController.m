@@ -8,6 +8,7 @@
 
 #import "OrientViewController.h"
 #import "OrientSectionViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface OrientViewController()
 @property (nonatomic) IBOutlet OrientSplashViewController* modal;
@@ -46,8 +47,23 @@
     // section scroll view setup
     self.sectionScrollView.pagingEnabled = YES;
     self.sectionScrollView.delegate = self;
-    self.sectionScrollView.backgroundColor = [UIColor lightGrayColor];
-    self.sectionScrollView.alpha = 0.3;
+    self.sectionScrollView.backgroundColor = [UIColor whiteColor];
+    self.sectionScrollView.alpha = 1;
+    
+    //set a drop shadow on the topview
+    self.topView.layer.masksToBounds = NO;
+    self.topView.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.topView.layer.shadowOffset = CGSizeMake(0.0f, 5.0f);
+    self.topView.layer.shadowOpacity = 0.5f;
+    
+    //set a drop shadow on the menubarview
+    self.menubarView.layer.masksToBounds = NO;
+    self.menubarView.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.menubarView.layer.shadowOffset = CGSizeMake(0.0f, -5.0f);
+    self.menubarView.layer.shadowOpacity = 0.5f;
+    
+    //hide the menubarview by default
+    
     
     
     CGFloat xPos = 0;
@@ -60,15 +76,14 @@
     {
         xPos = i * self.view.frame.size.width/2; //changed
         UIView* view = [[UIView alloc] initWithFrame:CGRectMake(xPos, 0, width, height)];
-        view.backgroundColor = [UIColor lightGrayColor];
-        //view.alpha = 0.3;
+        view.backgroundColor = [UIColor whiteColor];
         
         UILabel* sectionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, width, height)];
         //        self.orientSectionLabel.frame = CGRectMake(0, 0, width, height);
         sectionLabel.hidden = NO;
         sectionLabel.textAlignment = NSTextAlignmentCenter;
-        sectionLabel.backgroundColor = [UIColor lightGrayColor];
-        // sectionLabel.alpha = 0.3;
+        sectionLabel.backgroundColor = [UIColor whiteColor];
+        sectionLabel.textColor = [UIColor blackColor];
         [sectionLabel setFont:[UIFont fontWithName:@"Minion Pro" size:15]];
         
         switch (i) {
@@ -93,7 +108,7 @@
                 sectionLabel.text = @"<   SPORTS";
                 break;
                 
-            default:view.backgroundColor = [UIColor grayColor];
+            default:view.backgroundColor = [UIColor whiteColor];
                 break;
         }
         
@@ -102,7 +117,7 @@
         
         [self.sectionScrollView addSubview:view];
         
-        NSLog(@"1 xPos = %f", xPos);
+        //NSLog(@"1 xPos = %f", xPos);
     }
     
     
@@ -154,7 +169,7 @@
     
     switch (self.page) {
         case 0:
-            NSLog(@"page number is %d", self.page);
+            //NSLog(@"page number is %d", self.page);
             loadURL = @"http://bowdoinorient.com";
             //                NSString *fullURL = @"http://bowdoinorient.com";
             //                NSURL *url = [NSURL URLWithString:fullURL];
@@ -162,7 +177,7 @@
             //                [self.webView loadRequest:requestObj];
             break;
         case 1:
-            NSLog(@"page number is %d", self.page);
+            //NSLog(@"page number is %d", self.page);
             loadURL= @"http://bowdoinorient.com/browse/#News";
             //                NSString *fullURL = @"http://bowdoinorient.com/browse/#News";
             //                NSURL *url = [NSURL URLWithString:fullURL];
@@ -170,7 +185,7 @@
             //                [self.webView loadRequest:requestObj];
             break;
         case 2:
-            NSLog(@"page number is %d", self.page);
+            //NSLog(@"page number is %d", self.page);
             loadURL = @"http://bowdoinorient.com/browse/#Opinion";
             //NSString *fullURL = @"http://bowdoinorient.com/browse/#Opinion";
             //                NSURL *url = [NSURL URLWithString:fullURL];
@@ -178,7 +193,7 @@
             //                [self.webView loadRequest:requestObj];
             break;
         case 3:
-            NSLog(@"page number is %d", self.page);
+            //NSLog(@"page number is %d", self.page);
             loadURL = @"http://bowdoinorient.com/browse/#Features";
             //                NSString *fullURL = @"http://bowdoinorient.com/browse/#Features";
             //                NSURL *url = [NSURL URLWithString:fullURL];
@@ -186,7 +201,7 @@
             //                [self.webView loadRequest:requestObj];
             break;
         case 4:
-            NSLog(@"page number is %d", self.page);
+            //NSLog(@"page number is %d", self.page);
             loadURL = @"http://bowdoinorient.com/browse/#Arts%20&%20Entertainment";
             //                NSString *fullURL = @"http://bowdoinorient.com/browse/#Arts & Entertainment";
             //                NSURL *url = [NSURL URLWithString:fullURL];
@@ -194,7 +209,7 @@
             //                [self.webView loadRequest:requestObj];
             break;
         case 5:
-            NSLog(@"page number is %d", self.page);
+            //NSLog(@"page number is %d", self.page);
             loadURL = @"http://bowdoinorient.com/browse/#Sports";
             //                NSString *fullURL = @"http://bowdoinorient.com/browse/#Sports";
             //                NSURL *url = [NSURL URLWithString:fullURL];
@@ -280,7 +295,11 @@
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     self.page = (int)(self.sectionScrollView.contentOffset.x/self.sectionScrollView.frame.size.width);
-    NSLog(@"page number is %d", self.page);
+    //NSLog(@"page number is %d", self.page);
+}
+
+-(IBAction)tweetButton:(id)sender {
+    NSLog(@"You rang?");
 }
 
 
@@ -345,10 +364,5 @@
 //    }
 //}
 //}
-
-
-
-
-
 
 @end
