@@ -63,8 +63,14 @@
     self.menubarView.layer.shadowOpacity = 0.5f;
     
     //hide the menubarview by default
+    self.menubarView.hidden = YES;
     
-    
+    //set up gesture recognizer to unhide it with a double tap
+    self.webView.userInteractionEnabled = YES;
+    UITapGestureRecognizer * doubleTapped =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(doubleTap:)];
+    [doubleTapped setNumberOfTapsRequired:2];
+    doubleTapped.delegate = self;
+    [self.view addGestureRecognizer:doubleTapped];
     
     CGFloat xPos = 0;
     //CGFloat yPos = self.sectionScrollView.frame.origin.y;
@@ -296,6 +302,19 @@
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     self.page = (int)(self.sectionScrollView.contentOffset.x/self.sectionScrollView.frame.size.width);
     //NSLog(@"page number is %d", self.page);
+}
+
+-(void)doubleTap:(UITapGestureRecognizer *)gesture{
+    if (gesture.state == UIGestureRecognizerStateEnded) {
+        if(self.menubarView.hidden==NO)
+            self.menubarView.hidden=YES;
+        else
+            self.menubarView.hidden=NO;
+    }
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+    return YES;
 }
 
 -(IBAction)tweetButton:(id)sender {

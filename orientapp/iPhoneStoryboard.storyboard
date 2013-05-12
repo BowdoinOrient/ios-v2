@@ -134,28 +134,6 @@
         <image name="Logo_big.png" width="2550" height="679"/>
         <image name="testRefreshButton.png" width="33" height="30"/>
     </resources>
-    <classes>
-        <class className="OrientSplashViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OrientSplashViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="activityIndicatorView" candidateClass="UIActivityIndicatorView"/>
-            </relationships>
-        </class>
-        <class className="OrientViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OrientViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="homeButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="loadSection:" candidateClass="UIButton"/>
-                <relationship kind="action" name="tweetButton:"/>
-                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="menubarView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="modal" candidateClass="OrientSplashViewController"/>
-                <relationship kind="outlet" name="sectionScrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="topView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
