@@ -31,6 +31,6 @@
 @property (strong, nonatomic) ACAccount *twAccount;
 @property (strong, nonatomic) ACAccount *fbAccount;
 
-
+@property (strong, nonatomic) NSString *currURL;
 
 @end

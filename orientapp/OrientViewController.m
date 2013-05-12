@@ -23,10 +23,7 @@
 @synthesize activityIndicator = _activityIndicator;
 @synthesize modal = _modal;
 @synthesize haveShownModal = _haveShownModal;
-
-@synthesize accountStore = _accountStore;
-@synthesize fbAccount = _fbAccount;
-@synthesize twAccount = _twAccount;
+@synthesize currURL;
 
 // Loads the Orient homepage
 - (void) viewDidLoad {
@@ -34,8 +31,8 @@
     
     self.haveShownModal = NO;
     
-    NSString *fullURL = @"http://bowdoinorient.dev/browse/2013-02-22/chromeless";
-    NSURL *url = [NSURL URLWithString:fullURL];
+    self.currURL = @"http://bowdoinorient.dev/browse/2013-02-22/chromeless";
+    NSURL *url = [NSURL URLWithString:self.currURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:requestObj];
     
@@ -180,7 +177,7 @@
         case 0:
             //NSLog(@"page number is %d", self.page);
             loadURL = @"http://bowdoinorient.dev/browse/2013-02-22/chromeless/";
-            //                NSString *fullURL = @"http://bowdoinorient.dev";
+            //                self.currURL = @"http://bowdoinorient.dev";
             //                NSURL *url = [NSURL URLWithString:fullURL];
             //                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
             //                [self.webView loadRequest:requestObj];
@@ -188,7 +185,7 @@
         case 1:
             //NSLog(@"page number is %d", self.page);
             loadURL= @"http://bowdoinorient.dev/browse/2013-02-22/chromeless/#News";
-            //                NSString *fullURL = @"http://bowdoinorient.dev/browse/#News";
+            //                self.currURL = @"http://bowdoinorient.dev/browse/#News";
             //                NSURL *url = [NSURL URLWithString:fullURL];
             //                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
             //                [self.webView loadRequest:requestObj];
@@ -196,7 +193,7 @@
         case 2:
             //NSLog(@"page number is %d", self.page);
             loadURL = @"http://bowdoinorient.dev/browse/2013-02-22/chromeless/#Opinion";
-            //NSString *fullURL = @"http://bowdoinorient.dev/browse/#Opinion";
+            //self.currURL = @"http://bowdoinorient.dev/browse/#Opinion";
             //                NSURL *url = [NSURL URLWithString:fullURL];
             //                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
             //                [self.webView loadRequest:requestObj];
@@ -204,7 +201,7 @@
         case 3:
             //NSLog(@"page number is %d", self.page);
             loadURL = @"http://bowdoinorient.dev/browse/2013-02-22/chromeless/#Features";
-            //                NSString *fullURL = @"http://bowdoinorient.dev/browse/#Features";
+            //                self.currURL = @"http://bowdoinorient.dev/browse/#Features";
             //                NSURL *url = [NSURL URLWithString:fullURL];
             //                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
             //                [self.webView loadRequest:requestObj];
@@ -212,7 +209,7 @@
         case 4:
             //NSLog(@"page number is %d", self.page);
             loadURL = @"http://bowdoinorient.dev/browse/2013-02-22/chromeless/#Arts%20&%20Entertainment";
-            //                NSString *fullURL = @"http://bowdoinorient.dev/browse/#Arts & Entertainment";
+            //                self.currURL = @"http://bowdoinorient.dev/browse/#Arts & Entertainment";
             //                NSURL *url = [NSURL URLWithString:fullURL];
             //                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
             //                [self.webView loadRequest:requestObj];
@@ -220,7 +217,7 @@
         case 5:
             //NSLog(@"page number is %d", self.page);
             loadURL = @"http://bowdoinorient.dev/browse/2013-02-22/chromeless/#Sports";
-            //                NSString *fullURL = @"http://bowdoinorient.dev/browse/#Sports";
+            //                self.currURL = @"http://bowdoinorient.dev/browse/#Sports";
             //                NSURL *url = [NSURL URLWithString:fullURL];
             //                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
             //                [self.webView loadRequest:requestObj];
@@ -231,8 +228,8 @@
             
     }
     
-    NSString *fullURL = loadURL;
-    NSURL *url = [NSURL URLWithString:fullURL];
+    self.currURL = loadURL;
+    NSURL *url = [NSURL URLWithString:self.currURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:requestObj];
     
@@ -241,8 +238,8 @@
 
 
 - (IBAction)homeButtonPressed:(UIButton *)sender {
-    NSString *fullURL = @"http://bowdoinorient.dev/browse/2013-02-22/chromeless";
-    NSURL *url = [NSURL URLWithString:fullURL];
+    self.currURL = @"http://bowdoinorient.dev/browse/2013-02-22/chromeless";
+    NSURL *url = [NSURL URLWithString:self.currURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:requestObj];
 }
@@ -262,7 +259,8 @@
     
     //it's formed like a URL that should be chromeless, but doesn't have the "chromeless" already
     if([urlTest evaluateWithObject:request.URL.absoluteString] && ![urlTest2 evaluateWithObject:request.URL.absoluteString]){
-        NSString *redirectURL = [request.URL.absoluteString stringByAppendingString:@"/chromeless"];
+        self.currURL = request.URL.absoluteString;
+        NSString *redirectURL = [self.currURL stringByAppendingString:@"/chromeless"];
         NSURL *url = [NSURL URLWithString:redirectURL];
         NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
         //NSLog(@"I'd redirect you to %@, if it were working.",url);
@@ -330,7 +328,7 @@
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
         SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [tweetSheet setInitialText:@"DAT TWEETER"];
+        [tweetSheet setInitialText:[self.currURL stringByAppendingString:@" via @bowdoinorient"]];
         [self presentViewController:tweetSheet animated:YES completion:nil];
     }
     else
@@ -347,19 +345,18 @@
 }
 
 //Post an update to Facebook about the current URL
-//borrows code from http://stackoverflow.com/a/14044826/2178152
 - (IBAction)fbButton:(id)sender {
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
     {
         SLComposeViewController *fbSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-        [fbSheet setInitialText:@"DAT FACEBOOK"];
+        [fbSheet setInitialText:[self.currURL stringByAppendingString:@" via @bowdoinorient"]];
         [self presentViewController:fbSheet animated:YES completion:nil];
     }
     else
     {
         UIAlertView *alertView = [[UIAlertView alloc]
                                   initWithTitle:@"Sorry"
-                                  message:@"You can't send a tweet right now! Please make sure your device has an internet connection and you have at least one Twitter account set up."
+                                  message:@"You can't post an update right now! Please make sure your device has an internet connection and you have a Facebook account set up in iOS."
                                   delegate:self
                                   cancelButtonTitle:@"OK"
                                   otherButtonTitles:nil];
@@ -380,42 +377,42 @@
 //        switch (self.page) {
 //            case 0:
 //                loadURL = @"http://bowdoinorient.dev";
-////                NSString *fullURL = @"http://bowdoinorient.dev";
+////                self.currURL = @"http://bowdoinorient.dev";
 ////                NSURL *url = [NSURL URLWithString:fullURL];
 ////                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
 ////                [self.webView loadRequest:requestObj];
 //                break;
 //            case 1:
 //                loadURL= @"http://bowdoinorient.dev/browse/#News";
-////                NSString *fullURL = @"http://bowdoinorient.dev/browse/#News";
+////                self.currURL = @"http://bowdoinorient.dev/browse/#News";
 ////                NSURL *url = [NSURL URLWithString:fullURL];
 ////                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
 ////                [self.webView loadRequest:requestObj];
 //                break;
 //            case 2:
 //                loadURL = @"http://bowdoinorient.dev/browse/#Opinion";
-//                //NSString *fullURL = @"http://bowdoinorient.dev/browse/#Opinion";
+//                //self.currURL = @"http://bowdoinorient.dev/browse/#Opinion";
 ////                NSURL *url = [NSURL URLWithString:fullURL];
 ////                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
 ////                [self.webView loadRequest:requestObj];
 //                break;
 //            case 3:
 //                loadURL = @"http://bowdoinorient.dev/browse/#Features";
-////                NSString *fullURL = @"http://bowdoinorient.dev/browse/#Features";
+////                self.currURL = @"http://bowdoinorient.dev/browse/#Features";
 ////                NSURL *url = [NSURL URLWithString:fullURL];
 ////                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
 ////                [self.webView loadRequest:requestObj];
 //                break;
 //            case 4:
 //                loadURL = @"http://bowdoinorient.dev/browse/#Arts & Entertainment";
-////                NSString *fullURL = @"http://bowdoinorient.dev/browse/#Arts & Entertainment";
+////                self.currURL = @"http://bowdoinorient.dev/browse/#Arts & Entertainment";
 ////                NSURL *url = [NSURL URLWithString:fullURL];
 ////                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
 ////                [self.webView loadRequest:requestObj];
 //                break;
 //            case 5:
 //                loadURL = @"http://bowdoinorient.dev/browse/#Sports";
-////                NSString *fullURL = @"http://bowdoinorient.dev/browse/#Sports";
+////                self.currURL = @"http://bowdoinorient.dev/browse/#Sports";
 ////                NSURL *url = [NSURL URLWithString:fullURL];
 ////                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
 ////                [self.webView loadRequest:requestObj];
@@ -423,7 +420,7 @@
 //            default:loadURL = @"http://bowdoinorient.dev";
 //                break;
 //
-//                NSString *fullURL = loadURL;
+//                self.currURL = loadURL;
 //                NSURL *url = [NSURL URLWithString:fullURL];
 //                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
 //                [self.webView loadRequest:requestObj];
