@@ -33,4 +33,6 @@
 
 @property (strong, nonatomic) NSString *currURL;
 
+@property (weak, nonatomic) IBOutlet UIImageView *fbImage;
+@property (weak, nonatomic) IBOutlet UIImageView *twImage;
 @end

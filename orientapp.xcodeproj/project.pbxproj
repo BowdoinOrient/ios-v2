@@ -26,6 +26,8 @@
 		9A4A75E0172870D5007172DF /* news.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75B1172870D5007172DF /* news.png */; };
 		9A4A75E1172870D5007172DF /* opinion.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75B2172870D5007172DF /* opinion.png */; };
 		9A4A75E2172870D5007172DF /* sports.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75B3172870D5007172DF /* sports.png */; };
+		9AA72A3117403EEB0007605C /* fb.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AA72A2F17403EEA0007605C /* fb.png */; };
+		9AA72A3217403EEB0007605C /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AA72A3017403EEB0007605C /* twitter.png */; };
 		9AB4D3FB16DD0C76009D073A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AB4D3FA16DD0C76009D073A /* UIKit.framework */; };
 		9AB4D3FD16DD0C76009D073A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AB4D3FC16DD0C76009D073A /* Foundation.framework */; };
 		9AB4D3FF16DD0C76009D073A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AB4D3FE16DD0C76009D073A /* CoreGraphics.framework */; };
@@ -82,6 +84,8 @@
 		9AA72A2C174038360007605C /* MyriadPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Regular.otf"; sourceTree = "<group>"; };
 		9AA72A2D174038360007605C /* MyriadPro-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Semibold.otf"; sourceTree = "<group>"; };
 		9AA72A2E174038360007605C /* MyriadPro-SemiboldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-SemiboldIt.otf"; sourceTree = "<group>"; };
+		9AA72A2F17403EEA0007605C /* fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb.png; sourceTree = "<group>"; };
+		9AA72A3017403EEB0007605C /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		9AB4D3F716DD0C76009D073A /* orientapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = orientapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AB4D3FA16DD0C76009D073A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9AB4D3FC16DD0C76009D073A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -156,6 +160,8 @@
 		9A4A75AA172870D5007172DF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9AA72A2F17403EEA0007605C /* fb.png */,
+				9AA72A3017403EEB0007605C /* twitter.png */,
 				9A4A75AB172870D5007172DF /* Logo.png */,
 				9A4A75AC172870D5007172DF /* Logo_big.png */,
 				9A4A75AD172870D5007172DF /* Sections */,
@@ -373,6 +379,8 @@
 				9A4A75E1172870D5007172DF /* opinion.png in Resources */,
 				9A4A75E2172870D5007172DF /* sports.png in Resources */,
 				E4A9D49D173C112E00799FA9 /* testRefreshButton.png in Resources */,
+				9AA72A3117403EEB0007605C /* fb.png in Resources */,
+				9AA72A3217403EEB0007605C /* twitter.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

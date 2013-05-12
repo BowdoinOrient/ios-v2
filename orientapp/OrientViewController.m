@@ -62,6 +62,14 @@
     self.menubarView.layer.shadowOffset = CGSizeMake(0.0f, -5.0f);
     self.menubarView.layer.shadowOpacity = 0.5f;
     
+    //set some subtle shadows on the fb and twitter icons
+    self.fbImage.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.fbImage.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
+    self.fbImage.layer.shadowOpacity = 0.5f;
+    self.twImage.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.twImage.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
+    self.twImage.layer.shadowOpacity = 0.5f;
+    
     //hide the menubarview by default
     self.menubarView.hidden = YES;
     
