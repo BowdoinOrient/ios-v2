@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "OrientSplashViewController.h"
+#import <Social/Social.h>
+#import <Accounts/Accounts.h>
 
 @interface OrientViewController : UIViewController <UIScrollViewDelegate, UIWebViewDelegate>
 
@@ -20,9 +22,14 @@
 - (IBAction)homeButtonPressed:(UIButton *)sender;
 - (IBAction)loadSection:(UIButton *)sender;
 - (IBAction)tweetButton:(id)sender;
+- (IBAction)fbButton:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIView *menubarView;
 @property (weak, nonatomic) IBOutlet UIView *topView;
+
+@property (strong, nonatomic) ACAccountStore *accountStore;
+@property (strong, nonatomic) ACAccount *twAccount;
+@property (strong, nonatomic) ACAccount *fbAccount;
 
 
 

@@ -67,6 +67,7 @@
 		9AB4D43516DD1431009D073A /* iPhoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AB4D43416DD1431009D073A /* iPhoneStoryboard.storyboard */; };
 		9AB4D43C16DD164D009D073A /* OrientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB4D43B16DD164D009D073A /* OrientViewController.m */; };
 		9AE4E2ED1728831600A9DC2F /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE4E2EC1728831600A9DC2F /* Social.framework */; };
+		9AF2CBDF174019BF00690F24 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF2CBDD1740199700690F24 /* Accounts.framework */; };
 		E49AC7BE1728787F00585469 /* OrientSectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49AC7BD1728787F00585469 /* OrientSectionViewController.m */; };
 		E49AC7C1172878B700585469 /* OrientSection.m in Sources */ = {isa = PBXBuildFile; fileRef = E49AC7C0172878B700585469 /* OrientSection.m */; };
 		E4A9D49D173C112E00799FA9 /* testRefreshButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E4A9D49C173C112E00799FA9 /* testRefreshButton.png */; };
@@ -139,6 +140,7 @@
 		9AB4D43A16DD164D009D073A /* OrientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientViewController.h; sourceTree = "<group>"; };
 		9AB4D43B16DD164D009D073A /* OrientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientViewController.m; sourceTree = "<group>"; };
 		9AE4E2EC1728831600A9DC2F /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		9AF2CBDD1740199700690F24 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		E49AC7BC1728787F00585469 /* OrientSectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientSectionViewController.h; sourceTree = "<group>"; };
 		E49AC7BD1728787F00585469 /* OrientSectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientSectionViewController.m; sourceTree = "<group>"; };
 		E49AC7BF172878B700585469 /* OrientSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientSection.h; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AF2CBDF174019BF00690F24 /* Accounts.framework in Frameworks */,
 				9AE4E2ED1728831600A9DC2F /* Social.framework in Frameworks */,
 				9AB4D3FB16DD0C76009D073A /* UIKit.framework in Frameworks */,
 				9AB4D3FD16DD0C76009D073A /* Foundation.framework in Frameworks */,
@@ -339,6 +342,7 @@
 		9AB4D3F916DD0C76009D073A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9AF2CBDD1740199700690F24 /* Accounts.framework */,
 				9AE4E2EC1728831600A9DC2F /* Social.framework */,
 				9AB4D3FA16DD0C76009D073A /* UIKit.framework */,
 				9AB4D3FC16DD0C76009D073A /* Foundation.framework */,
