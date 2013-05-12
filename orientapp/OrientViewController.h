@@ -7,24 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "OrientMenubarView.h"
 #import <UIKit/UIKit.h>
+#import "OrientSplashViewController.h"
 
-@interface OrientViewController : UIViewController <UIScrollViewDelegate, UIWebViewDelegate> {
-        IBOutlet UIWebView *webView;
-        IBOutlet UIScrollView *sectionScrollView;
-        IBOutlet UIActivityIndicatorView *activityIndicator;
-}
+@interface OrientViewController : UIViewController <UIScrollViewDelegate, UIWebViewDelegate>
 
 
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) IBOutlet UIScrollView *sectionScrollView;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 - (IBAction)homeButtonPressed:(UIButton *)sender;
-@property (strong, nonatomic) IBOutlet UILabel *sectionLabel;
-@property (strong, nonatomic) IBOutlet UIButton *sectionButton;
-@property (strong, nonatomic) IBOutlet UIScrollView *sectionScrollView;
-@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
+- (IBAction)loadSection:(UIButton *)sender;
+- (IBAction)tweetButton:(id)sender;
 
-@property (strong, nonatomic) IBOutlet OrientMenubarView *bottomMenu;
-@property BOOL isMenubarHidden;
+@property (weak, nonatomic) IBOutlet UIView *menubarView;
+@property (weak, nonatomic) IBOutlet UIView *topView;
+
+
+
 @end
