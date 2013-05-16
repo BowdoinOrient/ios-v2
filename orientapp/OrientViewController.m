@@ -3,6 +3,7 @@
 //  orientapp
 //
 //  Created by Brian Jacobel on 2/26/13.
+//  Modified by Brian Jacobel and Quinn Cohane
 //  Copyright (c) 2013 com.bowdoinorient. All rights reserved.
 //
 
@@ -180,27 +181,29 @@
 
 // load the section indicated in the scrollView
 - (IBAction)loadSection:(UIButton *)sender {
+    NSString* loadURL = @"";
+    
     switch (self.page) {
         case 0:
-            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless"];
+            loadURL = @"http://bowdoinorient.com";
             break;
         case 1:
-            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/#News"];
+            loadURL= @"http://bowdoinorient.com/browse/#News";
             break;
         case 2:
-            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/#Opinion"];;
+            loadURL = @"http://bowdoinorient.com/browse/#Opinion";
             break;
         case 3:
-            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/#Features"];
+            loadURL = @"http://bowdoinorient.com/browse/#Features";
             break;
         case 4:
-            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/##Arts%20&%20Entertainment"];
+            loadURL = @"http://bowdoinorient.com/browse/#Arts%20&%20Entertainment";
             break;
         case 5:
-            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/#Sports"];
+            loadURL = @"http://bowdoinorient.com/browse/#Sports";
             break;
-        default:
-            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless"];
+            
+        default:loadURL = @"http://bowdoinorient.com";
             break;
             
     }
@@ -210,7 +213,8 @@
     [self.webView loadRequest:requestObj];
 }
 
-
+// return to the Orient homepage when the Orient logo in the top left is pressed
+// Set the scroll view back to the initial Home view
 - (IBAction)homeButtonPressed:(UIButton *)sender {
     self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless"];
     NSURL *url = [NSURL URLWithString:self.currURL];
@@ -222,9 +226,11 @@
 
 
 - (BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
+    /*
     if (![self.presentedViewController isBeingDismissed]) {
         [self dismissViewControllerAnimated:YES completion:^{}];
     }
+     */
     
     //XCode keeps throwing a warning on this line when I try to use escape characters that are absolutely vital for the regex to work.... *sigh*
     NSString *bocomRegex = @"http://(www\.)?bowdoinorient\.com(/(browse|article|series|author|search|about|advsearch|contact|subscribe|advertise|survey)?/?.+?)?";
@@ -282,12 +288,12 @@
     if ([segue.identifier isEqualToString:@"modal"])
     {
         self.modal = (OrientSplashViewController*)segue.destinationViewController;
+        self.modal.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     }
     
     //OrientSectionViewController* orientSectionViewController = (OrientSectionViewController*)[segue destinationViewController];
 }
 
-#pragma mark - UIScrollViewDelegate
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     self.page = (int)(self.sectionScrollView.contentOffset.x/self.sectionScrollView.frame.size.width);

@@ -14,6 +14,7 @@
 
 @implementation OrientSplashViewController
 @synthesize activityIndicatorView = _activityIndicatorView;
+@synthesize creditsLabel = _creditsLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,12 +31,26 @@
 	// Do any additional setup after loading the view.
     self.activityIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     self.activityIndicatorView.hidesWhenStopped = YES;
+    
+    [self.creditsLabel setFont:[UIFont fontWithName:@"Minion Pro" size:self.creditsLabel.font.pointSize]];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return YES;
+}
+
+-(BOOL)shouldAutorotate {
+    return YES;
+}
+
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
 }
 
 
