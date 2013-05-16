@@ -10,5 +10,6 @@
 
 @interface OrientSplashViewController : UIViewController <UIWebViewDelegate>
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
+@property (strong, nonatomic) IBOutlet UILabel *creditsLabel;
 
 @end

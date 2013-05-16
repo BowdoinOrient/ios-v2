@@ -3,6 +3,7 @@
 //  orientapp
 //
 //  Created by Brian Jacobel on 2/26/13.
+//  Modified by Brian Jacobel and Quinn Cohane
 //  Copyright (c) 2013 com.bowdoinorient. All rights reserved.
 //
 
@@ -44,12 +45,6 @@
     self.activityIndicator.hidesWhenStopped = YES;
     self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     
-    // section scroll view setup
-    self.sectionScrollView.pagingEnabled = YES;
-    self.sectionScrollView.delegate = self;
-    self.sectionScrollView.backgroundColor = [UIColor whiteColor];
-    self.sectionScrollView.alpha = 1;
-    
     //set a drop shadow on the topview
     self.topView.layer.masksToBounds = NO;
     self.topView.layer.shadowColor = [UIColor blackColor].CGColor;
@@ -72,6 +67,12 @@
     doubleTapped.delegate = self;
     [self.view addGestureRecognizer:doubleTapped];
     
+    // section scroll view setup
+    self.sectionScrollView.pagingEnabled = YES;
+    self.sectionScrollView.delegate = self;
+    self.sectionScrollView.backgroundColor = [UIColor whiteColor];
+    self.sectionScrollView.alpha = 1;
+    
     CGFloat xPos = 0;
     //CGFloat yPos = self.sectionScrollView.frame.origin.y;
     CGFloat width = self.sectionScrollView.bounds.size.width;
@@ -80,28 +81,26 @@
     
     for (int i = 0; i < numberOfSections; i++)
     {
-        xPos = i * self.view.frame.size.width/2; //changed
+        xPos = i * self.view.frame.size.width/2;
         UIView* view = [[UIView alloc] initWithFrame:CGRectMake(xPos, 0, width, height)];
         view.backgroundColor = [UIColor whiteColor];
         
+        // creates label to display the current section
         UILabel* sectionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, width, height)];
-        //        self.orientSectionLabel.frame = CGRectMake(0, 0, width, height);
         sectionLabel.hidden = NO;
         sectionLabel.textAlignment = NSTextAlignmentCenter;
         sectionLabel.backgroundColor = [UIColor whiteColor];
         sectionLabel.textColor = [UIColor blackColor];
-        [sectionLabel setFont:[UIFont fontWithName:@"Minion Pro" size:15]];
+        [sectionLabel setFont:[UIFont fontWithName:@"Minion Pro" size:15.0]];
         
         switch (i) {
             case 0:
                 sectionLabel.text = @"HOME   >";
                 break;
             case 1:
-                //view.backgroundColor = [UIColor greenColor];
                 sectionLabel.text = @"<   NEWS   >";
                 break;
             case 2:
-                //view.backgroundColor = [UIColor blueColor];
                 sectionLabel.text = @"<   OPINION   >";
                 break;
             case 3:
@@ -122,9 +121,7 @@
         [view addSubview:sectionLabel];
         
         [self.sectionScrollView addSubview:view];
-        
-        //NSLog(@"1 xPos = %f", xPos);
-    }
+        }
     
     
     self.sectionScrollView.contentSize = CGSizeMake(self.sectionScrollView.frame.size.width * numberOfSections, self.sectionScrollView.frame.size.height);
@@ -134,7 +131,7 @@
 // Dismiss splash from initial load
 - (void)viewDidAppear:(BOOL)animated
 {
-    self.modal.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+//    self.modal.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     //    [self presentViewController:self.modal animated:NO completion:nil];
     if (!self.haveShownModal)
     {
@@ -168,6 +165,10 @@
     [self.activityIndicator stopAnimating];
 }
 
+//
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    self.page = (int)(self.sectionScrollView.contentOffset.x/self.sectionScrollView.frame.size.width);
+}
 
 // load the section indicated in the scrollView
 - (IBAction)loadSection:(UIButton *)sender {
@@ -175,52 +176,22 @@
     
     switch (self.page) {
         case 0:
-            //NSLog(@"page number is %d", self.page);
             loadURL = @"http://bowdoinorient.com";
-            //                NSString *fullURL = @"http://bowdoinorient.com";
-            //                NSURL *url = [NSURL URLWithString:fullURL];
-            //                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-            //                [self.webView loadRequest:requestObj];
             break;
         case 1:
-            //NSLog(@"page number is %d", self.page);
             loadURL= @"http://bowdoinorient.com/browse/#News";
-            //                NSString *fullURL = @"http://bowdoinorient.com/browse/#News";
-            //                NSURL *url = [NSURL URLWithString:fullURL];
-            //                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-            //                [self.webView loadRequest:requestObj];
             break;
         case 2:
-            //NSLog(@"page number is %d", self.page);
             loadURL = @"http://bowdoinorient.com/browse/#Opinion";
-            //NSString *fullURL = @"http://bowdoinorient.com/browse/#Opinion";
-            //                NSURL *url = [NSURL URLWithString:fullURL];
-            //                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-            //                [self.webView loadRequest:requestObj];
             break;
         case 3:
-            //NSLog(@"page number is %d", self.page);
             loadURL = @"http://bowdoinorient.com/browse/#Features";
-            //                NSString *fullURL = @"http://bowdoinorient.com/browse/#Features";
-            //                NSURL *url = [NSURL URLWithString:fullURL];
-            //                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-            //                [self.webView loadRequest:requestObj];
             break;
         case 4:
-            //NSLog(@"page number is %d", self.page);
             loadURL = @"http://bowdoinorient.com/browse/#Arts%20&%20Entertainment";
-            //                NSString *fullURL = @"http://bowdoinorient.com/browse/#Arts & Entertainment";
-            //                NSURL *url = [NSURL URLWithString:fullURL];
-            //                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-            //                [self.webView loadRequest:requestObj];
             break;
         case 5:
-            //NSLog(@"page number is %d", self.page);
             loadURL = @"http://bowdoinorient.com/browse/#Sports";
-            //                NSString *fullURL = @"http://bowdoinorient.com/browse/#Sports";
-            //                NSURL *url = [NSURL URLWithString:fullURL];
-            //                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-            //                [self.webView loadRequest:requestObj];
             break;
             
         default:loadURL = @"http://bowdoinorient.com";
@@ -232,23 +203,25 @@
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:requestObj];
-    
-    
 }
 
-
+// return to the Orient homepage when the Orient logo in the top left is pressed
+// Set the scroll view back to the initial Home view
 - (IBAction)homeButtonPressed:(UIButton *)sender {
     NSString *fullURL = @"http://www.bowdoinorient.com";
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:requestObj];
+    [self.sectionScrollView scrollRectToVisible:CGRectMake(0, 0, self.sectionScrollView.frame.size.width, self.sectionScrollView.frame.size.height) animated:YES];
 }
 
 
 - (BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
+    /*
     if (![self.presentedViewController isBeingDismissed]) {
         [self dismissViewControllerAnimated:YES completion:^{}];
     }
+     */
     
     //DEM REGEX
     NSString *bocomRegex = @"http://(www\.)?bowdoinorient\.com(/(browse|article|series|author)/?.+?)?";
@@ -292,17 +265,12 @@
     if ([segue.identifier isEqualToString:@"modal"])
     {
         self.modal = (OrientSplashViewController*)segue.destinationViewController;
+        self.modal.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     }
     
     //OrientSectionViewController* orientSectionViewController = (OrientSectionViewController*)[segue destinationViewController];
 }
 
-#pragma mark - UIScrollViewDelegate
-
--(void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    self.page = (int)(self.sectionScrollView.contentOffset.x/self.sectionScrollView.frame.size.width);
-    //NSLog(@"page number is %d", self.page);
-}
 
 -(void)doubleTap:(UITapGestureRecognizer *)gesture{
     if (gesture.state == UIGestureRecognizerStateEnded) {
@@ -321,67 +289,17 @@
     NSLog(@"You rang?");
 }
 
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return YES;
+}
 
+-(BOOL)shouldAutorotate {
+    return YES;
+}
 
-//-(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
-//{
-//    NSString* loadURL = @"";
-//
-//    if (fmodf(self.sectionScrollView.contentOffset.x, self.sectionScrollView.frame.size.width) == 0)
-//    {
-//        switch (self.page) {
-//            case 0:
-//                loadURL = @"http://bowdoinorient.com";
-////                NSString *fullURL = @"http://bowdoinorient.com";
-////                NSURL *url = [NSURL URLWithString:fullURL];
-////                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-////                [self.webView loadRequest:requestObj];
-//                break;
-//            case 1:
-//                loadURL= @"http://bowdoinorient.com/browse/#News";
-////                NSString *fullURL = @"http://bowdoinorient.com/browse/#News";
-////                NSURL *url = [NSURL URLWithString:fullURL];
-////                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-////                [self.webView loadRequest:requestObj];
-//                break;
-//            case 2:
-//                loadURL = @"http://bowdoinorient.com/browse/#Opinion";
-//                //NSString *fullURL = @"http://bowdoinorient.com/browse/#Opinion";
-////                NSURL *url = [NSURL URLWithString:fullURL];
-////                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-////                [self.webView loadRequest:requestObj];
-//                break;
-//            case 3:
-//                loadURL = @"http://bowdoinorient.com/browse/#Features";
-////                NSString *fullURL = @"http://bowdoinorient.com/browse/#Features";
-////                NSURL *url = [NSURL URLWithString:fullURL];
-////                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-////                [self.webView loadRequest:requestObj];
-//                break;
-//            case 4:
-//                loadURL = @"http://bowdoinorient.com/browse/#Arts & Entertainment";
-////                NSString *fullURL = @"http://bowdoinorient.com/browse/#Arts & Entertainment";
-////                NSURL *url = [NSURL URLWithString:fullURL];
-////                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-////                [self.webView loadRequest:requestObj];
-//                break;
-//            case 5:
-//                loadURL = @"http://bowdoinorient.com/browse/#Sports";
-////                NSString *fullURL = @"http://bowdoinorient.com/browse/#Sports";
-////                NSURL *url = [NSURL URLWithString:fullURL];
-////                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-////                [self.webView loadRequest:requestObj];
-//                
-//            default:loadURL = @"http://bowdoinorient.com";
-//                break;
-//
-//                NSString *fullURL = loadURL;
-//                NSURL *url = [NSURL URLWithString:fullURL];
-//                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-//                [self.webView loadRequest:requestObj];
-//
-//    }
-//}
-//}
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
+}
+
 
 @end
