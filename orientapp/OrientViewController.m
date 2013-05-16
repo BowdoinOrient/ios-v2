@@ -31,7 +31,10 @@
     
     self.haveShownModal = NO;
     
-    self.currURL = @"http://bowdoinorient.dev/browse/2013-02-22/chromeless";
+    //set the initial article date to today's date
+    self.articleDate = [NSDate date];
+    
+    self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.dev/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless"];
     NSURL *url = [NSURL URLWithString:self.currURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:requestObj];
@@ -77,6 +80,7 @@
     self.webView.userInteractionEnabled = YES;
     UITapGestureRecognizer * doubleTapped =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(doubleTap:)];
     [doubleTapped setNumberOfTapsRequired:2];
+    //screw you xcode this is a perfectly legitimate assignment
     doubleTapped.delegate = self;
     [self.view addGestureRecognizer:doubleTapped];
     
@@ -179,34 +183,31 @@
 
 // load the section indicated in the scrollView
 - (IBAction)loadSection:(UIButton *)sender {
-    NSString* loadURL = @"";
-    
     switch (self.page) {
         case 0:
-            loadURL = @"http://bowdoinorient.dev/browse/2013-02-22/chromeless/";
+            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.dev/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless"];
             break;
         case 1:
-            loadURL= @"http://bowdoinorient.dev/browse/2013-02-22/chromeless/#News";
+            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.dev/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/#News"];
             break;
         case 2:
-            loadURL = @"http://bowdoinorient.dev/browse/2013-02-22/chromeless/#Opinion";
+            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.dev/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/#Opinion"];;
             break;
         case 3:
-            loadURL = @"http://bowdoinorient.dev/browse/2013-02-22/chromeless/#Features";
+            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.dev/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/#Features"];
             break;
         case 4:
-            loadURL = @"http://bowdoinorient.dev/browse/2013-02-22/chromeless/#Arts%20&%20Entertainment";
+            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.dev/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/##Arts%20&%20Entertainment"];
             break;
         case 5:
-            loadURL = @"http://bowdoinorient.dev/browse/2013-02-22/chromeless/#Sports";
+            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.dev/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/#Sports"];
             break;
-            
-        default:loadURL = @"http://bowdoinorient.dev/browse/2013-02-22/chromeless/";
+        default:
+            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.dev/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless"];
             break;
             
     }
     
-    self.currURL = loadURL;
     NSURL *url = [NSURL URLWithString:self.currURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:requestObj];
@@ -214,7 +215,7 @@
 
 
 - (IBAction)homeButtonPressed:(UIButton *)sender {
-    self.currURL = @"http://bowdoinorient.dev/browse/2013-02-22/chromeless";
+    self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.dev/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless"];
     NSURL *url = [NSURL URLWithString:self.currURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:requestObj];
@@ -228,8 +229,8 @@
         [self dismissViewControllerAnimated:YES completion:^{}];
     }
     
-    //DEM REGEX
-    NSString *bocomRegex = @"http://(www\.)?bowdoinorient\.dev(/(browse|article|series|author)/?.+?)?";
+    //XCode keeps throwing a warning on this line when I try to use escape characters that are absolutely vital for the regex to work.... *sigh*
+    NSString *bocomRegex = @"http://(www\.)?bowdoinorient\.dev(/(browse|article|series|author|search|about|advsearch|contact|subscribe|advertise|survey)?/?.+?)?";
     NSPredicate *urlTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", bocomRegex];
     
     NSString *bocomRegex2 = @".+(chromeless).+";
@@ -248,7 +249,7 @@
     return YES;
 }
 
-- (NSString *)mostRecentIssueDate:(NSDate *) date {
++ (NSString *)mostRecentIssueDate:(NSDate *) date {
     NSLocale *MURRICA = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
     [dateFormat setLocale:MURRICA];
@@ -267,6 +268,15 @@
     [dateFormat setDateFormat:@"yyyy-MM-dd"];
     
     return [dateFormat stringFromDate:lastFriday];
+}
+
++ (NSString *)stringFromDate:(NSDate *)reqdate {
+    NSLocale *MURRICA = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
+    [dateFormat setLocale:MURRICA];
+    [dateFormat setDateFormat:@"yyyy-MM-dd"];
+    
+    return [dateFormat stringFromDate:reqdate];
 }
 
 // set up Splash segue
@@ -350,69 +360,5 @@
     }
     self.menubarView.hidden = YES;
 }
-
-
-
-
-//-(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
-//{
-//    NSString* loadURL = @"";
-//
-//    if (fmodf(self.sectionScrollView.contentOffset.x, self.sectionScrollView.frame.size.width) == 0)
-//    {
-//        switch (self.page) {
-//            case 0:
-//                loadURL = @"http://bowdoinorient.dev";
-////                self.currURL = @"http://bowdoinorient.dev";
-////                NSURL *url = [NSURL URLWithString:fullURL];
-////                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-////                [self.webView loadRequest:requestObj];
-//                break;
-//            case 1:
-//                loadURL= @"http://bowdoinorient.dev/browse/#News";
-////                self.currURL = @"http://bowdoinorient.dev/browse/#News";
-////                NSURL *url = [NSURL URLWithString:fullURL];
-////                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-////                [self.webView loadRequest:requestObj];
-//                break;
-//            case 2:
-//                loadURL = @"http://bowdoinorient.dev/browse/#Opinion";
-//                //self.currURL = @"http://bowdoinorient.dev/browse/#Opinion";
-////                NSURL *url = [NSURL URLWithString:fullURL];
-////                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-////                [self.webView loadRequest:requestObj];
-//                break;
-//            case 3:
-//                loadURL = @"http://bowdoinorient.dev/browse/#Features";
-////                self.currURL = @"http://bowdoinorient.dev/browse/#Features";
-////                NSURL *url = [NSURL URLWithString:fullURL];
-////                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-////                [self.webView loadRequest:requestObj];
-//                break;
-//            case 4:
-//                loadURL = @"http://bowdoinorient.dev/browse/#Arts & Entertainment";
-////                self.currURL = @"http://bowdoinorient.dev/browse/#Arts & Entertainment";
-////                NSURL *url = [NSURL URLWithString:fullURL];
-////                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-////                [self.webView loadRequest:requestObj];
-//                break;
-//            case 5:
-//                loadURL = @"http://bowdoinorient.dev/browse/#Sports";
-////                self.currURL = @"http://bowdoinorient.dev/browse/#Sports";
-////                NSURL *url = [NSURL URLWithString:fullURL];
-////                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-////                [self.webView loadRequest:requestObj];
-//                
-//            default:loadURL = @"http://bowdoinorient.dev";
-//                break;
-//
-//                self.currURL = loadURL;
-//                NSURL *url = [NSURL URLWithString:fullURL];
-//                NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-//                [self.webView loadRequest:requestObj];
-//
-//    }
-//}
-//}
 
 @end

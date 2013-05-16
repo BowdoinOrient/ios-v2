@@ -32,6 +32,7 @@
 @property (strong, nonatomic) ACAccount *fbAccount;
 
 @property (strong, nonatomic) NSString *currURL;
+@property (strong, nonatomic) NSDate *articleDate;
 
 @property (weak, nonatomic) IBOutlet UIImageView *fbImage;
 @property (weak, nonatomic) IBOutlet UIImageView *twImage;
