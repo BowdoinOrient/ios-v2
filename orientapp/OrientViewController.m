@@ -181,30 +181,31 @@
 
 // load the section indicated in the scrollView
 - (IBAction)loadSection:(UIButton *)sender {
-    NSString* loadURL = @"";
     
     switch (self.page) {
         case 0:
-            loadURL = @"http://bowdoinorient.com";
+            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless"];
             break;
         case 1:
-            loadURL= @"http://bowdoinorient.com/browse/#News";
+            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/#News"];
             break;
         case 2:
-            loadURL = @"http://bowdoinorient.com/browse/#Opinion";
+            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/#Opinion"];
             break;
         case 3:
-            loadURL = @"http://bowdoinorient.com/browse/#Features";
+            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/#Features"];
             break;
         case 4:
-            loadURL = @"http://bowdoinorient.com/browse/#Arts%20&%20Entertainment";
+            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/##Arts%20&%20Entertainment"];
             break;
         case 5:
-            loadURL = @"http://bowdoinorient.com/browse/#Sports";
+            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/#Sports"];
+            break;
+        default:
+            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless"];
             break;
             
-        default:loadURL = @"http://bowdoinorient.com";
-            break;
+
             
     }
     
@@ -231,9 +232,8 @@
         [self dismissViewControllerAnimated:YES completion:^{}];
     }
      */
-    
-    //XCode keeps throwing a warning on this line when I try to use escape characters that are absolutely vital for the regex to work.... *sigh*
-    NSString *bocomRegex = @"http://(www\.)?bowdoinorient\.com(/(browse|article|series|author|search|about|advsearch|contact|subscribe|advertise|survey)?/?.+?)?";
+
+    NSString *bocomRegex = @"http://(www.)?bowdoinorient.com/(browse|article|series|author|search|about|advsearch|contact|subscribe|advertise|survey)/?(.+)?";
     NSPredicate *urlTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", bocomRegex];
     
     NSString *bocomRegex2 = @".+(chromeless).+";
@@ -249,6 +249,7 @@
         [self.webView loadRequest:requestObj];
         return NO;
     }
+    
     return YES;
 }
 
@@ -363,5 +364,18 @@
     }
     self.menubarView.hidden = YES;
 }
+
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return YES;
+}
+
+-(BOOL)shouldAutorotate {
+    return YES;
+}
+
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
+}
+
 
 @end

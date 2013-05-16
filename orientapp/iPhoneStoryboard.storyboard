@@ -26,7 +26,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xhh-hf-aUp">
-                                        <rect key="frame" x="4" y="6" width="147" height="30"/>
+                                        <rect key="frame" x="3" y="5" width="147" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Button" image="Logo.png">
@@ -70,12 +70,13 @@
                                 <rect key="frame" x="0.0" y="493" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cmM-4p-VRQ">
-                                        <rect key="frame" x="30" y="7" width="120" height="44"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cmM-4p-VRQ">
+                                        <rect key="frame" x="99" y="5" width="122" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal">
+                                        <state key="normal" title="Tweet It!">
                                             <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -84,29 +85,6 @@
                                             <action selector="tweetButton:" destination="ath-wx-9tZ" eventType="touchUpInside" id="qg7-ie-VOg"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UbU-Ac-ZsY">
-                                        <rect key="frame" x="175" y="7" width="120" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="fbButton:" destination="ath-wx-9tZ" eventType="touchUpInside" id="Ciu-wB-hlj"/>
-                                        </connections>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="twitter.png" id="Hsa-yk-Cus">
-                                        <rect key="frame" x="40" y="14" width="100" height="28"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="fb.png" id="DrT-mR-2bP">
-                                        <rect key="frame" x="189" y="13" width="92" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -116,11 +94,9 @@
                     <navigationItem key="navigationItem" id="T1s-YV-9F1"/>
                     <connections>
                         <outlet property="activityIndicator" destination="SGA-J9-S8z" id="wnJ-fG-hM1"/>
-                        <outlet property="fbImage" destination="DrT-mR-2bP" id="5ym-am-Sgv"/>
                         <outlet property="menubarView" destination="8Ho-91-quV" id="zD9-Y0-Uas"/>
                         <outlet property="sectionScrollView" destination="a2M-e1-wuS" id="vdE-AR-nXa"/>
                         <outlet property="topView" destination="rfc-VF-ndh" id="go4-ZR-PqK"/>
-                        <outlet property="twImage" destination="Hsa-yk-Cus" id="BCc-HO-sUw"/>
                         <outlet property="webView" destination="LXj-8H-mhd" id="0Ef-Dk-Gec"/>
                         <segue destination="rje-OA-q2X" kind="modal" identifier="modal" modalTransitionStyle="crossDissolve" animates="NO" id="kGB-7Y-8of"/>
                     </connections>
@@ -138,12 +114,8 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Logo_big.png" id="fG3-ea-l3i">
-<<<<<<< HEAD
-                                <rect key="frame" x="0.0" y="150" width="320" height="89"/>
-=======
                                 <rect key="frame" x="1" y="84" width="320" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
->>>>>>> 92439d4c69446cedd9d397bb8900bc4a04710117
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" id="29s-sn-77v">
                                 <rect key="frame" x="150" y="313" width="20" height="20"/>
@@ -172,9 +144,7 @@
     <resources>
         <image name="Logo.png" width="978" height="191"/>
         <image name="Logo_big.png" width="2550" height="679"/>
-        <image name="fb.png" width="300" height="300"/>
         <image name="testRefreshButton.png" width="33" height="30"/>
-        <image name="twitter.png" width="369" height="300"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
