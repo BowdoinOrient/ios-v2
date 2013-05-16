@@ -34,7 +34,7 @@
     //set the initial article date to today's date
     self.articleDate = [NSDate date];
     
-    self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.dev/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless"];
+    self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless"];
     NSURL *url = [NSURL URLWithString:self.currURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:requestObj];
@@ -109,11 +109,9 @@
                 sectionLabel.text = @"HOME   >";
                 break;
             case 1:
-                //view.backgroundColor = [UIColor greenColor];
                 sectionLabel.text = @"<   NEWS   >";
                 break;
             case 2:
-                //view.backgroundColor = [UIColor blueColor];
                 sectionLabel.text = @"<   OPINION   >";
                 break;
             case 3:
@@ -135,7 +133,6 @@
         
         [self.sectionScrollView addSubview:view];
         
-        //NSLog(@"1 xPos = %f", xPos);
     }
     
     
@@ -185,25 +182,25 @@
 - (IBAction)loadSection:(UIButton *)sender {
     switch (self.page) {
         case 0:
-            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.dev/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless"];
+            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless"];
             break;
         case 1:
-            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.dev/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/#News"];
+            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/#News"];
             break;
         case 2:
-            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.dev/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/#Opinion"];;
+            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/#Opinion"];;
             break;
         case 3:
-            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.dev/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/#Features"];
+            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/#Features"];
             break;
         case 4:
-            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.dev/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/##Arts%20&%20Entertainment"];
+            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/##Arts%20&%20Entertainment"];
             break;
         case 5:
-            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.dev/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/#Sports"];
+            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/#Sports"];
             break;
         default:
-            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.dev/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless"];
+            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless"];
             break;
             
     }
@@ -215,7 +212,7 @@
 
 
 - (IBAction)homeButtonPressed:(UIButton *)sender {
-    self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.dev/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless"];
+    self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless"];
     NSURL *url = [NSURL URLWithString:self.currURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:requestObj];
@@ -230,7 +227,7 @@
     }
     
     //XCode keeps throwing a warning on this line when I try to use escape characters that are absolutely vital for the regex to work.... *sigh*
-    NSString *bocomRegex = @"http://(www\.)?bowdoinorient\.dev(/(browse|article|series|author|search|about|advsearch|contact|subscribe|advertise|survey)?/?.+?)?";
+    NSString *bocomRegex = @"http://(www\.)?bowdoinorient\.com(/(browse|article|series|author|search|about|advsearch|contact|subscribe|advertise|survey)?/?.+?)?";
     NSPredicate *urlTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", bocomRegex];
     
     NSString *bocomRegex2 = @".+(chromeless).+";
