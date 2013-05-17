@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9A344188171DA0BE0057B815 /* iPadStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A344187171DA0BE0057B815 /* iPadStoryboard.storyboard */; };
 		9A4A75D1172870D5007172DF /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75A0172870D5007172DF /* Icon-72.png */; };
 		9A4A75D2172870D5007172DF /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75A1172870D5007172DF /* Icon-72@2x.png */; };
 		9A4A75D3172870D5007172DF /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75A2172870D5007172DF /* Icon-Small-50.png */; };
@@ -26,6 +25,7 @@
 		9A4A75E0172870D5007172DF /* news.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75B1172870D5007172DF /* news.png */; };
 		9A4A75E1172870D5007172DF /* opinion.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75B2172870D5007172DF /* opinion.png */; };
 		9A4A75E2172870D5007172DF /* sports.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A75B3172870D5007172DF /* sports.png */; };
+		9A6976DD1746BBED0076D15B /* iPadStoryboard2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A6976DC1746BBED0076D15B /* iPadStoryboard2.storyboard */; };
 		9AA72A3117403EEB0007605C /* fb.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AA72A2F17403EEA0007605C /* fb.png */; };
 		9AA72A3217403EEB0007605C /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AA72A3017403EEB0007605C /* twitter.png */; };
 		9AB4D3FB16DD0C76009D073A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AB4D3FA16DD0C76009D073A /* UIKit.framework */; };
@@ -48,7 +48,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9A344187171DA0BE0057B815 /* iPadStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPadStoryboard.storyboard; sourceTree = "<group>"; };
 		9A4A75A0172870D5007172DF /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		9A4A75A1172870D5007172DF /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		9A4A75A2172870D5007172DF /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
@@ -67,6 +66,7 @@
 		9A4A75B1172870D5007172DF /* news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news.png; sourceTree = "<group>"; };
 		9A4A75B2172870D5007172DF /* opinion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = opinion.png; sourceTree = "<group>"; };
 		9A4A75B3172870D5007172DF /* sports.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sports.png; sourceTree = "<group>"; };
+		9A6976DC1746BBED0076D15B /* iPadStoryboard2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPadStoryboard2.storyboard; sourceTree = "<group>"; };
 		9AA72A1D174038360007605C /* minionproboldit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minionproboldit.ttf; sourceTree = "<group>"; };
 		9AA72A1E174038360007605C /* minionproit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minionproit.ttf; sourceTree = "<group>"; };
 		9AA72A1F174038360007605C /* minionpromedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minionpromedium.ttf; sourceTree = "<group>"; };
@@ -197,7 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				9AB4D43416DD1431009D073A /* iPhoneStoryboard.storyboard */,
-				9A344187171DA0BE0057B815 /* iPadStoryboard.storyboard */,
+				9A6976DC1746BBED0076D15B /* iPadStoryboard2.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -359,7 +359,6 @@
 				9AB4D40F16DD0C76009D073A /* Default@2x.png in Resources */,
 				9AB4D41116DD0C76009D073A /* Default-568h@2x.png in Resources */,
 				9AB4D43516DD1431009D073A /* iPhoneStoryboard.storyboard in Resources */,
-				9A344188171DA0BE0057B815 /* iPadStoryboard.storyboard in Resources */,
 				9A4A75D1172870D5007172DF /* Icon-72.png in Resources */,
 				9A4A75D2172870D5007172DF /* Icon-72@2x.png in Resources */,
 				9A4A75D3172870D5007172DF /* Icon-Small-50.png in Resources */,
@@ -381,6 +380,7 @@
 				E4A9D49D173C112E00799FA9 /* testRefreshButton.png in Resources */,
 				9AA72A3117403EEB0007605C /* fb.png in Resources */,
 				9AA72A3217403EEB0007605C /* twitter.png in Resources */,
+				9A6976DD1746BBED0076D15B /* iPadStoryboard2.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
