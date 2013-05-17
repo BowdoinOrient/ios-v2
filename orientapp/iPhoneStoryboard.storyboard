@@ -13,10 +13,10 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="EVC-QA-U21">
-                                <rect key="frame" x="0.0" y="47" width="320" height="501"/>
+                                <rect key="frame" x="0.0" y="45" width="320" height="503"/>
                             </imageView>
                             <webView contentMode="scaleToFill" scalesPageToFit="YES" id="LXj-8H-mhd">
-                                <rect key="frame" x="0.0" y="47" width="320" height="501"/>
+                                <rect key="frame" x="0.0" y="45" width="320" height="503"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
@@ -64,7 +64,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" id="SGA-J9-S8z">
-                                <rect key="frame" x="144" y="301" width="20" height="20"/>
+                                <rect key="frame" x="151" y="264" width="20" height="20"/>
                             </activityIndicatorView>
                             <view contentMode="scaleToFill" id="TaO-dQ-KPR">
                                 <rect key="frame" x="1" y="493" width="320" height="55"/>
@@ -142,7 +142,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" id="29s-sn-77v">
-                                <rect key="frame" x="150" y="313" width="20" height="20"/>
+                                <rect key="frame" x="151" y="264" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Created by Brian Jacobel '14 and Quinn Cohane '13" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6fs-zQ-1lW">
@@ -172,32 +172,6 @@
         <image name="testRefreshButton.png" width="33" height="30"/>
         <image name="twitter.png" width="369" height="300"/>
     </resources>
-    <classes>
-        <class className="OrientSplashViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OrientSplashViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="activityIndicatorView" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="creditsLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="OrientViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OrientViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="fbButton:"/>
-                <relationship kind="action" name="homeButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="loadSection:" candidateClass="UIButton"/>
-                <relationship kind="action" name="tweetButton:"/>
-                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="fbImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="menubarView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="modal" candidateClass="OrientSplashViewController"/>
-                <relationship kind="outlet" name="sectionScrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="topView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="twImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

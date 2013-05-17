@@ -26,8 +26,6 @@
 - (IBAction)tweetButton:(id)sender;
 - (IBAction)fbButton:(id)sender;
 
-
-
 @property (strong, nonatomic) ACAccountStore *accountStore;
 @property (strong, nonatomic) ACAccount *twAccount;
 @property (strong, nonatomic) ACAccount *fbAccount;

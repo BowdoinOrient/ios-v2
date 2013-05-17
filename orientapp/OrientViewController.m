@@ -32,6 +32,9 @@
     
     self.haveShownModal = NO;
     
+    //make the webview zoomable - this has to be done way at the beginning
+    self.webView.scalesPageToFit = YES;
+    
     //set the initial article date to today's date
     self.articleDate = [NSDate date];
     
@@ -205,7 +208,7 @@
             self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless"];
             break;
             
-
+            
             
     }
     
@@ -228,11 +231,11 @@
 
 - (BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
     /*
-    if (![self.presentedViewController isBeingDismissed]) {
-        [self dismissViewControllerAnimated:YES completion:^{}];
-    }
+     if (![self.presentedViewController isBeingDismissed]) {
+     [self dismissViewControllerAnimated:YES completion:^{}];
+     }
      */
-
+    
     NSString *bocomRegex = @"http://(www.)?bowdoinorient.com/(browse|article|series|author|search|about|advsearch|contact|subscribe|advertise|survey)/?(.+)?";
     NSPredicate *urlTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", bocomRegex];
     
@@ -291,8 +294,6 @@
         self.modal = (OrientSplashViewController*)segue.destinationViewController;
         self.modal.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     }
-    
-    //OrientSectionViewController* orientSectionViewController = (OrientSectionViewController*)[segue destinationViewController];
 }
 
 
@@ -303,10 +304,35 @@
 
 -(void)doubleTap:(UITapGestureRecognizer *)gesture{
     if (gesture.state == UIGestureRecognizerStateEnded) {
-        if(self.menubarView.hidden==NO)
-            self.menubarView.hidden=YES;
-        else
+        //transition the MB off the screen
+        if(self.menubarView.hidden==NO){
+            [UIView animateWithDuration:0.4f
+                                  delay:0.0f
+                                options:UIViewAnimationOptionCurveEaseOut
+                             animations:^{
+                                 [self.menubarView setFrame:CGRectMake(0, self.view.bounds.size.height+self.menubarView.frame.size.height, self.menubarView.frame.size.width, self.menubarView.frame.size.height)];
+                             }
+                             completion:^(BOOL finished){
+                                 if (finished) {
+                                     self.menubarView.hidden=YES;
+                                 }
+                             }];
+        } else {
+            //transition it ON the screen
             self.menubarView.hidden=NO;
+            [UIView animateWithDuration:0.4f
+                                  delay:0.0f
+                                options:UIViewAnimationOptionCurveEaseOut
+                             animations:^{
+                                 [self.menubarView setFrame:CGRectMake(0, self.view.bounds.size.height-self.menubarView.frame.size.height, self.menubarView.frame.size.width, self.menubarView.frame.size.height)];
+                             }
+                             completion:^(BOOL finished){
+                                 if (finished) {
+                                     //could run something on complete here
+                                 }
+                             }];
+            
+        }
     }
 }
 
@@ -337,7 +363,19 @@
                                   otherButtonTitles:nil];
         [alertView show];
     }
-    self.menubarView.hidden = YES;
+    //transition the MB off the screen
+    [UIView animateWithDuration:0.4f
+                          delay:0.0f
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         [self.menubarView setFrame:CGRectMake(0, self.view.bounds.size.height+self.menubarView.frame.size.height, self.menubarView.frame.size.width, self.menubarView.frame.size.height)];
+                     }
+                     completion:^(BOOL finished){
+                         if (finished) {
+                             self.menubarView.hidden=YES;
+                         }
+                     }];
+    
 }
 
 //Post an update to Facebook about the current URL
@@ -362,7 +400,18 @@
                                   otherButtonTitles:nil];
         [alertView show];
     }
-    self.menubarView.hidden = YES;
+    //transition the MB off the screen
+    [UIView animateWithDuration:0.4f
+                          delay:0.0f
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         [self.menubarView setFrame:CGRectMake(0, self.view.bounds.size.height+self.menubarView.frame.size.height, self.menubarView.frame.size.width, self.menubarView.frame.size.height)];
+                     }
+                     completion:^(BOOL finished){
+                         if (finished) {
+                             self.menubarView.hidden=YES;
+                         }
+                     }];
 }
 
 -(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
