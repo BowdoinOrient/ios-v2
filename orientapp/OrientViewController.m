@@ -32,6 +32,11 @@
     
     self.haveShownModal = NO;
     
+    //set a bit of a shadow on the activity indicator so it appears "over" text
+    self.activityIndicator.layer.shadowColor = [UIColor whiteColor].CGColor;
+    self.activityIndicator.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
+    self.activityIndicator.layer.shadowOpacity = 0.5f;
+    
     //make the webview zoomable - this has to be done way at the beginning
     self.webView.scalesPageToFit = YES;
     
@@ -95,17 +100,27 @@
     
     for (int i = 0; i < numberOfSections; i++)
     {
-        xPos = i * self.view.frame.size.width/2; //changed
+        /*//this is a pretty gross hack: the scroll bar in IB *has* to be set to this size
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+            xPos = i * 350;
+        else
+            xPos = i * 150;*/
+        
+        xPos = i * self.sectionScrollView.bounds.size.width;
+        
         UIView* view = [[UIView alloc] initWithFrame:CGRectMake(xPos, 0, width, height)];
         view.backgroundColor = [UIColor whiteColor];
         
         UILabel* sectionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, width, height)];
-        //        self.orientSectionLabel.frame = CGRectMake(0, 0, width, height);
         sectionLabel.hidden = NO;
         sectionLabel.textAlignment = NSTextAlignmentCenter;
         sectionLabel.backgroundColor = [UIColor whiteColor];
         sectionLabel.textColor = [UIColor blackColor];
-        [sectionLabel setFont:[UIFont fontWithName:@"Minion Pro" size:15]];
+        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+            [sectionLabel setFont:[UIFont fontWithName:@"Minion Pro" size:21]];
+        else
+            [sectionLabel setFont:[UIFont fontWithName:@"Minion Pro" size:15]];
         
         switch (i) {
             case 0:
