@@ -84,7 +84,6 @@
     self.webView.userInteractionEnabled = YES;
     UITapGestureRecognizer * doubleTapped =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(doubleTap:)];
     [doubleTapped setNumberOfTapsRequired:2];
-    //screw you xcode this is a perfectly legitimate assignment
     doubleTapped.delegate = self;
     [self.view addGestureRecognizer:doubleTapped];
     
@@ -199,7 +198,7 @@
             self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/#Features"];
             break;
         case 4:
-            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/##Arts%20&%20Entertainment"];
+            self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/#Arts%20&%20Entertainment"];
             break;
         case 5:
             self.currURL = [NSString stringWithFormat:@"%@%@%@", @"http://bowdoinorient.com/browse/", [OrientViewController stringFromDate:self.articleDate], @"/chromeless/#Sports"];
