@@ -32,13 +32,8 @@
     
     self.haveShownModal = NO;
     
-    //set a bit of a shadow on the activity indicator so it appears "over" text
-    self.activityIndicator.layer.shadowColor = [UIColor whiteColor].CGColor;
-    self.activityIndicator.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
-    self.activityIndicator.layer.shadowOpacity = 0.5f;
-    
     //make the webview zoomable - this has to be done way at the beginning
-    self.webView.scalesPageToFit = YES;
+    self.webView.scalesPageToFit = NO;
     
     //set the initial article date to today's date
     self.articleDate = [NSDate date];
