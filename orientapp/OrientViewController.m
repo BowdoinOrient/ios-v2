@@ -69,13 +69,16 @@
     self.menubarView.layer.shadowOffset = CGSizeMake(0.0f, -5.0f);
     self.menubarView.layer.shadowOpacity = 0.5f;
     
-    //set some subtle shadows on the fb and twitter icons
+    //set some subtle shadows on the fb, search and twitter icons
     self.fbImage.layer.shadowColor = [UIColor blackColor].CGColor;
     self.fbImage.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
     self.fbImage.layer.shadowOpacity = 0.5f;
     self.twImage.layer.shadowColor = [UIColor blackColor].CGColor;
     self.twImage.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
     self.twImage.layer.shadowOpacity = 0.5f;
+    self.searchImage.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.searchImage.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
+    self.searchImage.layer.shadowOpacity = 0.5f;
     
     //hide the menubarview by default
     self.menubarView.hidden = YES;
@@ -86,6 +89,10 @@
     [doubleTapped setNumberOfTapsRequired:2];
     doubleTapped.delegate = self;
     [self.view addGestureRecognizer:doubleTapped];
+    
+    //the load button isn't getting highlighted when clicked? so set it in code
+    //this STILL isn't working
+    self.loadButton.adjustsImageWhenHighlighted = YES;
     
     CGFloat xPos = 0;
     //CGFloat yPos = self.sectionScrollView.frame.origin.y;
@@ -245,10 +252,10 @@
      }
      */
     
-    NSString *bocomRegex = @"http://(www.)?bowdoinorient.com/(browse|article|series|author|search|about|advsearch|contact|subscribe|advertise|survey)/?(.+)?";
+    NSString *bocomRegex = @"http://(www.)?bowdoinorient.com/(browse|article|series|author|about|contact|subscribe|advertise|survey)/?(.+)?";
     NSPredicate *urlTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", bocomRegex];
     
-    NSString *bocomRegex2 = @".+(chromeless).+";
+    NSString *bocomRegex2 = @"(.+)?(chromeless)(.+)?";
     NSPredicate *urlTest2 = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", bocomRegex2];
     
     //it's formed like a URL that should be chromeless, but doesn't have the "chromeless" already
@@ -314,34 +321,10 @@
 -(void)doubleTap:(UITapGestureRecognizer *)gesture{
     if (gesture.state == UIGestureRecognizerStateEnded) {
         //transition the MB off the screen
-        if(self.menubarView.hidden==NO){
-            [UIView animateWithDuration:0.4f
-                                  delay:0.0f
-                                options:UIViewAnimationOptionCurveEaseOut
-                             animations:^{
-                                 [self.menubarView setFrame:CGRectMake(0, self.view.bounds.size.height+self.menubarView.frame.size.height, self.menubarView.frame.size.width, self.menubarView.frame.size.height)];
-                             }
-                             completion:^(BOOL finished){
-                                 if (finished) {
-                                     self.menubarView.hidden=YES;
-                                 }
-                             }];
-        } else {
-            //transition it ON the screen
-            self.menubarView.hidden=NO;
-            [UIView animateWithDuration:0.4f
-                                  delay:0.0f
-                                options:UIViewAnimationOptionCurveEaseOut
-                             animations:^{
-                                 [self.menubarView setFrame:CGRectMake(0, self.view.bounds.size.height-self.menubarView.frame.size.height, self.menubarView.frame.size.width, self.menubarView.frame.size.height)];
-                             }
-                             completion:^(BOOL finished){
-                                 if (finished) {
-                                     //could run something on complete here
-                                 }
-                             }];
-            
-        }
+        if(self.menubarView.hidden==NO)
+            [self hideMB];
+        else
+            [self showMB];
     }
 }
 
@@ -372,19 +355,7 @@
                                   otherButtonTitles:nil];
         [alertView show];
     }
-    //transition the MB off the screen
-    [UIView animateWithDuration:0.4f
-                          delay:0.0f
-                        options:UIViewAnimationOptionCurveEaseOut
-                     animations:^{
-                         [self.menubarView setFrame:CGRectMake(0, self.view.bounds.size.height+self.menubarView.frame.size.height, self.menubarView.frame.size.width, self.menubarView.frame.size.height)];
-                     }
-                     completion:^(BOOL finished){
-                         if (finished) {
-                             self.menubarView.hidden=YES;
-                         }
-                     }];
-    
+    [self hideMB];
 }
 
 //Post an update to Facebook about the current URL
@@ -409,6 +380,10 @@
                                   otherButtonTitles:nil];
         [alertView show];
     }
+    [self hideMB];
+}
+
+- (void)hideMB{
     //transition the MB off the screen
     [UIView animateWithDuration:0.4f
                           delay:0.0f
@@ -421,6 +396,31 @@
                              self.menubarView.hidden=YES;
                          }
                      }];
+}
+
+-(void)showMB{
+    //transition the menubar ON to the screen
+    self.menubarView.hidden=NO;
+    [UIView animateWithDuration:0.4f
+                          delay:0.0f
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         [self.menubarView setFrame:CGRectMake(0, self.view.bounds.size.height-self.menubarView.frame.size.height, self.menubarView.frame.size.width, self.menubarView.frame.size.height)];
+                     }
+                     completion:^(BOOL finished){
+                         if (finished) {
+                             //could run something on complete here
+                         }
+                     }];
+}
+
+- (IBAction)searchButton:(id)sender{
+    self.currURL = @"http://bowdoinorient.com/search/chromeless";
+    NSURL *url = [NSURL URLWithString:self.currURL];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    [self.webView loadRequest:requestObj];
+
+    [self hideMB];
 }
 
 -(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

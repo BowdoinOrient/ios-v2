@@ -23,8 +23,10 @@
 
 - (IBAction)homeButtonPressed:(UIButton *)sender;
 - (IBAction)loadSection:(UIButton *)sender;
+
 - (IBAction)tweetButton:(id)sender;
 - (IBAction)fbButton:(id)sender;
+- (IBAction)searchButton:(id)sender;
 
 @property (strong, nonatomic) ACAccountStore *accountStore;
 @property (strong, nonatomic) ACAccount *twAccount;
@@ -35,4 +37,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *fbImage;
 @property (weak, nonatomic) IBOutlet UIImageView *twImage;
+@property (weak, nonatomic) IBOutlet UIImageView *searchImage;
+
+@property (weak, nonatomic) IBOutlet UIButton *loadButton;
 @end
