@@ -89,10 +89,7 @@
     [doubleTapped setNumberOfTapsRequired:2];
     doubleTapped.delegate = self;
     [self.view addGestureRecognizer:doubleTapped];
-    
-    //the load button isn't getting highlighted when clicked? so set it in code
-    //this STILL isn't working
-    self.loadButton.adjustsImageWhenHighlighted = YES;
+
     
     CGFloat xPos = 0;
     //CGFloat yPos = self.sectionScrollView.frame.origin.y;
@@ -100,6 +97,7 @@
     CGFloat height = self.sectionScrollView.bounds.size.height;
     int numberOfSections = 6;
     
+    //code to handle the scrolling side-to-side action in the SectionView
     for (int i = 0; i < numberOfSections; i++)
     {
         xPos = i * self.sectionScrollView.bounds.size.width;
@@ -246,21 +244,20 @@
 
 
 - (BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
-    /*
-     if (![self.presentedViewController isBeingDismissed]) {
-     [self dismissViewControllerAnimated:YES completion:^{}];
-     }
-     */
     
+    //regular expression to detect presence of a URL that should be chromeless
     NSString *bocomRegex = @"http://(www.)?bowdoinorient.com/(browse|article|series|author|about|contact|subscribe|advertise|survey)/?(.+)?";
     NSPredicate *urlTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", bocomRegex];
     
+    //regular expression to detect URLs that are ALREADY chromeless
     NSString *bocomRegex2 = @"(.+)?(chromeless)(.+)?";
     NSPredicate *urlTest2 = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", bocomRegex2];
     
     //it's formed like a URL that should be chromeless, but doesn't have the "chromeless" already
     if([urlTest evaluateWithObject:request.URL.absoluteString] && ![urlTest2 evaluateWithObject:request.URL.absoluteString]){
         NSString *redirectURL = [request.URL.absoluteString stringByAppendingString:@"/chromeless"];
+        
+        //intercept the load request, stop it, and load a chromeless URL instead
         self.currURL = redirectURL;
         NSURL *url = [NSURL URLWithString:redirectURL];
         NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
@@ -272,12 +269,14 @@
     return YES;
 }
 
-+ (NSString *)mostRecentIssueDate:(NSDate *) date {
+//This is never called... may potentially be used later in a "view archives" function
+- (NSString *)mostRecentIssueDate:(NSDate *) date {
     NSLocale *MURRICA = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
     [dateFormat setLocale:MURRICA];
     [dateFormat setDateFormat:@"e"];
     
+    //which day of the week is it? (1-7)
     int dayOfWeek = [[dateFormat stringFromDate:date]intValue];
     int daysSinceLastFriday = (dayOfWeek - 6)%7; //friday is the 6th day of the week in the US locale
     if(daysSinceLastFriday<0)
@@ -290,9 +289,11 @@
     NSDate *lastFriday = [calendar dateByAddingComponents:futureComponents toDate:[calendar dateFromComponents:dateComponents] options:0];
     [dateFormat setDateFormat:@"yyyy-MM-dd"];
     
+    //return the date of the most recent friday
     return [dateFormat stringFromDate:lastFriday];
 }
 
+//format a passsed date in the same way that the Orient does it: yyyy-mm-dd
 + (NSString *)stringFromDate:(NSDate *)reqdate {
     NSLocale *MURRICA = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
@@ -318,6 +319,7 @@
     //NSLog(@"page number is %d", self.page);
 }
 
+//detect the double tap gesture to show or hide the menubar
 -(void)doubleTap:(UITapGestureRecognizer *)gesture{
     if (gesture.state == UIGestureRecognizerStateEnded) {
         //transition the MB off the screen
@@ -328,6 +330,7 @@
     }
 }
 
+//recognize both my double tap gesture AND the webview's built-in gestures
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
     return YES;
 }
@@ -384,7 +387,7 @@
 }
 
 - (void)hideMB{
-    //transition the MB off the screen
+    //transition the MB off the screen, then hide it
     [UIView animateWithDuration:0.4f
                           delay:0.0f
                         options:UIViewAnimationOptionCurveEaseOut
@@ -399,7 +402,7 @@
 }
 
 -(void)showMB{
-    //transition the menubar ON to the screen
+    //unhide, then transition the menubar on to the screen
     self.menubarView.hidden=NO;
     [UIView animateWithDuration:0.4f
                           delay:0.0f
@@ -414,6 +417,7 @@
                      }];
 }
 
+//load bo.com's search page when you press the magnifying glass icon
 - (IBAction)searchButton:(id)sender{
     self.currURL = @"http://bowdoinorient.com/search/chromeless";
     NSURL *url = [NSURL URLWithString:self.currURL];
@@ -423,6 +427,8 @@
     [self hideMB];
 }
 
+
+//rotation handling things
 -(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return YES;
 }
