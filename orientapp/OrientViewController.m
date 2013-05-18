@@ -32,7 +32,7 @@
     
     self.haveShownModal = NO;
     
-    //make the webview zoomable - this has to be done way at the beginning
+    //Prevent the webview from zooming on double tap
     self.webView.scalesPageToFit = NO;
     
     //set the initial article date to today's date
